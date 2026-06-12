@@ -9,6 +9,7 @@
   <title>Priyanshu Sharma | Portfolio Concept</title>
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/statpannel.css">
+  <link rel="stylesheet" href="./css/terminal.css">
   <!-- <link rel="stylesheet" href="./css/welcome.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -156,7 +157,7 @@
                   class="key-legend-qwerty">Git</span></div>
               <div class="key slate" style="--rise: -0.15rem;"><i class="fa-brands fa-github" aria-label="GH"></i><span
                   class="key-legend-qwerty">GitHub</span></div>
-              <div class="key deep" style="--rise: 0.25rem;"><i class="fa-solid fa-terminal" aria-label="CMD"></i><span
+              <div class="key deep" style="--rise: 0.25rem; cursor: pointer;" onclick="openPopup()"><i class="fa-solid fa-terminal" aria-label="CMD"></i><span
                   class="key-legend-qwerty">Terminal</span></div>
               <div class="key blue" style="--rise: -0.1rem;"><i class="fa-brands fa-react" aria-label="NEXT"></i><span
                   class="key-legend-qwerty">React</span></div>
@@ -593,11 +594,11 @@
       </div>
     </section>
 
-    <!-- ========================= 6. GITHUB SECTION ========================= -->
-    <section class="section" id="github">
+    <!-- ========================= 6. website Stats SECTION ========================= -->
+    <section class="section" id="website-stats">
       <div class="section-heading reveal">
-        <p class="section-kicker">Development Activity</p>
-        <h2>GitHub</h2>
+        <p class="section-kicker">Website Stats</p>
+        <h2>Website Stats</h2>
       </div>
       <div class="glass-card github-card reveal">
         <i class="fa-brands fa-github github-icon"></i>
@@ -813,12 +814,39 @@
     </div>
   </footer>
 
+  <!-- Terminal Popup -->
+  <div class="terminal-popup" id="terminalPopup" aria-hidden="true">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="terminal-dots">
+          <span class="dot-red" onclick="closePopup()"></span>
+          <span class="dot-yellow"></span>
+          <span class="dot-green"></span>
+        </div>
+        <span class="terminal-title">priyanshu@portfolio: ~ (bash)</span>
+      </div>
+      <div class="terminal-body" id="terminalBody">
+        <div class="terminal-history" id="terminalHistory">
+          <div class="terminal-row"><span class="prompt">priyanshu@portfolio:~$</span> <span class="typed-command"></span></div>
+        </div>
+        <div class="terminal-input-row" style="display: none;">
+          <span class="prompt">priyanshu@portfolio:~$</span>
+          <span class="input-text"></span><span class="terminal-cursor"></span>
+          <input type="text" class="terminal-hidden-input" id="terminalHiddenInput" autocomplete="off" spellcheck="false" aria-label="Terminal Input">
+        </div>
+      </div>
+      <div class="terminal-resize-handle"></div>
+    </div>
+  </div>
+  <button class="popup-scrim" id="popupScrim" onclick="closePopup()"></button>
+
   <!-- Load external libraries first -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
   <!-- Preloader welcome animation -->
   <!-- <script src="./js/welcome.js"></script> -->
   <script src="./js/statpannel.js"></script>
+  <script src="./js/terminal.js"></script>
   <script src="./js/script.js"></script>
   <script src="./js/keyboardlighting.js"></script>
 </body>

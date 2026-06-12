@@ -1,0 +1,101 @@
+.terminal-resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 18px;
+  height: 18px;
+  cursor: nwse-resize;
+}
+
+.terminal-window {
+  min-width: 320px;
+  min-height: 200px;
+  position: relative;
+}
+
+.terminal-header {
+  cursor: move;
+}
+
+.terminal-input-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.terminal-hidden-input {
+  position: absolute;
+  opacity: 0;
+  left: -9999px;
+  width: 0;
+  height: 0;
+  border: none;
+  outline: none;
+  pointer-events: none;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: currentColor;
+  margin-left: 2px;
+  animation: terminal-blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+@keyframes terminal-blink {
+  from, to { background-color: transparent }
+  50% { background-color: currentColor }
+}
+
+.terminal-history {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminal-row .info {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+.terminal-row .success {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.terminal-row .error {
+  color: #f87171;
+}
+
+.terminal-row .terminal-link {
+  color: #818cf8;
+  text-decoration: underline;
+}
+
+.terminal-row .terminal-link:hover {
+  color: #a5b4fc;
+}
+
+.output-line {
+  white-space: pre-wrap;
+  color: #e2e8f0;
+}
+
+body[data-theme="dawn"] .terminal-row .info {
+  color: #4f46e5;
+}
+
+body[data-theme="dawn"] .terminal-row .success {
+  color: #059669;
+}
+
+body[data-theme="dawn"] .terminal-row .terminal-link {
+  color: #2563eb;
+}
+
+body[data-theme="dawn"] .output-line {
+  color: #0f172a;
+}
