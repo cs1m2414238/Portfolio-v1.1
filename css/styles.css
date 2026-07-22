@@ -460,12 +460,11 @@ button {
   z-index: -3;
   filter: blur(90px);
   opacity: 0.12;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto;
   border-radius: 50%;
-  transition: top 4s ease-in-out, left 4s ease-in-out;
+  /* CLS FIX: GPU-only transition, fully isolated from layout tree */
+  will-change: transform;
+  contain: layout style paint;
+  transition: transform 4s ease-in-out;
 }
 
 .ambient-left {
@@ -517,12 +516,10 @@ button {
 body[data-theme="dawn"] .ambient {
   filter: blur(0px);
   opacity: 1;
-  top: auto;
-  left: auto;
-  right: auto;
-  bottom: auto;
   border-radius: 50%;
-  transition: top 4s ease-in-out, left 4s ease-in-out;
+  will-change: transform;
+  contain: layout style paint;
+  transition: transform 4s ease-in-out;
 }
 
 body[data-theme="dawn"] .ambient-left {
@@ -798,6 +795,7 @@ body[data-theme="dawn"] .menu-button {
 .hero h1 {
   font-size: clamp(4rem, 10vw, 7.4rem);
   min-height: 1.1em;
+  contain: layout;
 }
 
 @media (max-width: 768px) {
@@ -820,6 +818,8 @@ body[data-theme="dawn"] .menu-button {
 .hero-role {
   max-width: 32rem;
   margin: 1.4rem 0 0;
+  min-height: 3.5rem;
+  contain: layout;
 }
 
 .hero-buttons-grid {
@@ -2060,13 +2060,14 @@ body[data-theme="dawn"] .schedule-item + .schedule-item {
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 520ms ease, transform 520ms ease;
+  transform: translateY(24px) translateZ(0);
+  will-change: opacity, transform;
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1), transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateZ(0);
 }
 
 @keyframes twinkle {

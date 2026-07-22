@@ -1,6 +1,4 @@
-/* ==========================================================================
-   COMPETITIVE STATS DASHBOARD - GLASSMORPHISM THEMED
-   ========================================================================== */
+/* COMPETITIVE STATS DASHBOARD - GLASSMORPHISM THEMED */
 
 #stats-panel-section {
   padding: clamp(1rem, 2vw, 1.5rem) 1rem;
@@ -81,7 +79,16 @@ body[data-theme="dawn"] #stats-panel-section::after {
   -webkit-backdrop-filter: blur(30px) saturate(210%);
   padding: 1.5rem 1.8rem;
   transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  /* CLS FIX: Reserve height so JS template injection doesn't cause downstream shifts */
+  min-height: 700px;
+  contain: layout;
 }
+
+/* CLS FIX: Reserve tab content space before JS populates it */
+#stats-tab-content {
+  min-height: 520px;
+}
+
 
 body[data-theme="dawn"] .stats-card {
   border: 1px solid rgba(15, 23, 42, 0.06);

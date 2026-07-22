@@ -18,7 +18,7 @@ function runBootAnimation() {
     ease: "back.out(1.1)"
   });
 
-  // 2. Blink each text (legend) 3 times (random gaming keyboard boot)
+  // 2. Blink each text (legend) 3 times 
   tl.to(".key-legend-qwerty", {
     opacity: 0.55,
     duration: 0.28,

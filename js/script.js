@@ -9,19 +9,16 @@ const boardShell = document.querySelector("#skill-board-shell");
 const revealItems = document.querySelectorAll(".reveal");
 const icon = themeToggle ? themeToggle.querySelector(".icon") : null;
 
-// HyperOS Ambient Blobs Position Shuffler
+// HyperOS Ambient Blobs Position Shuffler (GPU-only, zero layout shifts)
 const ambientBlobs = document.querySelectorAll(".ambient");
-const leftPositions = ["-150px", "10vw", "25vw", "40vw", "60vw", "75vw", "90vw"];
-const topPositions = ["-250px", "-200px", "-150px", "-100px"];
+const translateXOptions = [-100, 80, 200, 350, 500, 650, 800];
+const translateYOptions = [-60, -30, 0, 30];
 
 function shuffleBlobPosition(blob) {
-  const randomLeft = leftPositions[Math.floor(Math.random() * leftPositions.length)];
-  const randomTop = topPositions[Math.floor(Math.random() * topPositions.length)];
-  
-  blob.style.left = randomLeft;
-  blob.style.top = randomTop;
-  blob.style.right = "auto";
-  blob.style.bottom = "auto";
+  const randomX = translateXOptions[Math.floor(Math.random() * translateXOptions.length)];
+  const randomY = translateYOptions[Math.floor(Math.random() * translateYOptions.length)];
+  // GPU compositor layer only — zero layout recalculation
+  blob.style.transform = `translate3d(${randomX}px, ${randomY}px, 0)`;
 }
 
 ambientBlobs.forEach((blob) => {
