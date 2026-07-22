@@ -8,6 +8,7 @@ window.openPopup = function() {
   
   if (!popup || !scrim || !historyEl) return;
   
+  document.body.style.overflow = "hidden";
   popup.classList.add("is-open");
   scrim.classList.add("is-open");
   popup.setAttribute("aria-hidden", "false");
@@ -74,6 +75,7 @@ window.closePopup = function() {
   const popup = document.getElementById("terminalPopup");
   const scrim = document.getElementById("popupScrim");
   if (!popup || !scrim) return;
+  document.body.style.overflow = "";   // to prevent scroll of main page 
   popup.classList.remove("is-open");
   scrim.classList.remove("is-open");
   popup.setAttribute("aria-hidden", "true");

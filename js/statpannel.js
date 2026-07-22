@@ -651,7 +651,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const valuesEl = card.querySelector(".card-values");
       
       if (!valuesEl) return;
-      const match = valuesEl.textContent.trim().match(/(\d+)\s*\/\s*(\d+)/);
+      const match = valuesEl.textContent.trim().match(/(\d+)\s*\/\s*(\d+)/); // used to trim space regex
       if (!match) return;
       
       const solved = parseInt(match[1], 10);
