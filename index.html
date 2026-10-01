@@ -75,9 +75,11 @@
     <a class="brand" href="#home">Priyanshu Sharma</a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#about">About</a>
+      <a href="#github">GitHub</a>
+      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -95,23 +97,12 @@
     </div>
   </header>
 
-  <aside class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
-    <a href="#home">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </aside>
-
-  <button class="menu-scrim" id="menu-scrim" type="button" aria-label="Close menu"></button>
-
     <main>
     <section class="hero section" id="home">
       <div class="hero-copy reveal">
         <p class="eyebrow">Hi, I am</p>
         <h1><span id="typing">Priyanshu Sharma</span></h1>
-        <p class="hero-role">Creative developer and AI builder crafting sleek, high-motion websites that feel tactile on
-          screen.</p>
+        <p class="hero-role">Software Engineer • AI/ML • Agentic Systems</p>
 
         <div class="hero-buttons-grid">
           <a class="primary-button" href="#projects">Explore Work</a>
@@ -181,8 +172,27 @@
     </section>
 
 
+        <!-- ========================= 2. ABOUT SECTION ========================= -->
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <h2>About Me</h2>
+      </div>
+      <div class="about-grid">
+        <article class="glass-card personal-story-card reveal">
+          <p class="card-label">Hello Folks <span class="waving-hand">👋😊</span></p>
+          <div class="story-paragraphs" style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 1.1rem; line-height: 1.8; text-align: left;">
+            <p>I'm <strong>Priyanshu Sharma</strong>, a passionate Software Developer currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering.</p>
+            <p>I have a strong interest in Backend Development and problem-solving, with hands-on experience in Java, Spring Boot, MySQL, and RESTful APIs. I enjoy designing and developing scalable applications that solve real-world challenges while following industry best practices.</p>
+            <p>Alongside backend development, I actively strengthen my Data Structures & Algorithms skills and work on projects that enhance my understanding of software engineering, system design, and modern development tools.</p>
+            <p>I am continuously learning, building, and exploring new technologies with the goal of becoming a skilled Software Engineer and contributing to impactful products and innovative solutions.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
     <!--  2. STACK TREE ========================= -->
-    <section class="learning-stacktree section" id="learning-stacktree">
+    <section class="learning-stacktree section" id="skills">
       <div class="section-heading reveal">
         <p class="section-kicker">Stack Tree</p>
         <h2>Full Stack Dev</h2>
@@ -269,10 +279,9 @@
             </div>
             <i class="fa-solid fa-chevron-down stack-chevron"></i>
             <div class="stack-tech-chips">
-              <span class="tech-chip"><i class="fa-solid fa-code"></i> VS Code</span>
-              <span class="tech-chip"><i class="fa-solid fa-laptop-code"></i> IntelliJ</span>
-              <span class="tech-chip"><i class="fa-solid fa-bolt"></i> Postman</span>
-              <span class="tech-chip"><i class="fa-brands fa-figma"></i> Figma</span>
+              <span class="tech-chip"><i class="fa-solid fa-code"></i> VS Code/ IntelliJ IDEA</span>
+              <span class="tech-chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
+              <span class="tech-chip"><i class="fa-solid fa-chart-simple"></i> Power BI</span>
               <span class="tech-chip"><i class="fa-solid fa-terminal"></i> Terminal</span>
             </div>
           </div>
@@ -522,197 +531,396 @@
     </section>
 
 
-    <!-- ========================= 4. PROJECTS SECTION ========================= -->
+    <!-- ========================= 4. FEATURED PROJECTS SECTION ========================= -->
     <section class="section projects-section" id="projects">
       <div class="section-heading reveal">
-        <p class="section-kicker"></p>
-        <h2>Projects</h2>
+        <p class="section-kicker">Engineering Showcase</p>
+        <h2>Featured Projects</h2>
+        <p class="section-lead">Autonomous agent architectures, distributed backends, and data intelligence systems built for real-world impact.</p>
       </div>
 
-      <div class="projects-grid">
-        <article class="project-card reveal">
-          <div class="project-visual visual-ops">
-            <div class="window-dots">
-              <span></span>
-              <span></span>
-              <span></span>
+      <div class="projects-showcase-grid">
+        <!-- 1. FLAGSHIP HERO PROJECT: VIDYUT -->
+        <article class="project-hero-card glass-card reveal">
+          <div class="project-hero-content">
+            <div class="project-badge-row">
+              <span class="project-flagship-pill"><i class="fa-solid fa-bolt"></i> Flagship Project</span>
+              <span class="project-type-pill">Agentic EV Platform</span>
             </div>
-            <div class="mock-grid">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <h3 class="project-title">VIDYUT</h3>
+            <p class="project-tagline">Autonomous Agentic EV Charging &amp; Grid Ecosystem</p>
+            <p class="project-description">
+              An AI-powered EV charging ecosystem that autonomously plans long-distance trips, selects compatible charging stations based on live grid telemetry, predicts charger availability, and dynamically reroutes upon station failure with vehicle-linked payments.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-java"></i> Spring Boot</span>
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React Native</span>
+              <span class="tech-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="tech-tag"><i class="fa-solid fa-brain"></i> Gemini AI</span>
+              <span class="tech-tag"><i class="fa-solid fa-microchip"></i> Google ADK</span>
+              <span class="tech-tag"><i class="fa-brands fa-google"></i> GCP</span>
+              <span class="tech-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://vidyut1-1.web.app/" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Live Demo Vidyut Platform">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
+              </a>
+              <a href="https://github.com/cs1m2414238/vidyutEV-1.0" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Vidyut Repository">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://github.com/cs1m2414238/vidyut-1.1" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Autopilot Agent v1.1">
+                <i class="fa-solid fa-code-fork"></i> Agent v1.1
+              </a>
             </div>
           </div>
-          <div class="project-copy">
-            <p class="project-type">Full Stack App</p>
-            <h3>Realtime Operations Board</h3>
-            <p>A bold monitoring interface with crisp states, layered panels, and enough motion to feel alive without
-              becoming noisy.</p>
-            <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
-              <a href="#" class="secondary-button" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a href="#" class="primary-button" aria-label="Live Demo"><i
-                  class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          <div class="project-hero-visual">
+            <div class="dashboard-mockup">
+              <div class="mockup-header">
+                <div class="mockup-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="mockup-title"><i class="fa-solid fa-terminal"></i> vidyut-autopilot-v1.1 --telemetry</div>
+                <span class="mockup-status-live"><span class="pulse-dot"></span> AUTOPILOT ACTIVE</span>
+              </div>
+              <div class="mockup-screen">
+                <div class="telemetry-grid">
+                  <div class="telemetry-stat">
+                    <span class="stat-lbl">ROUTE OPTIMIZATION</span>
+                    <span class="stat-num glow-cyan">OPTIMAL</span>
+                    <span class="stat-sub">3 stops mapped • 98.4% conf</span>
+                  </div>
+                  <div class="telemetry-stat">
+                    <span class="stat-lbl">BATTERY TELEMETRY</span>
+                    <span class="stat-num glow-green">78% SOC</span>
+                    <span class="stat-sub">340 km dynamic range</span>
+                  </div>
+                </div>
+                <div class="terminal-logs-window">
+                  <div class="t-log info"><span class="t-ts">[08:42:12]</span> Agent dispatched: Analyzing Kanpur -> Delhi transit corridor</div>
+                  <div class="t-log ok"><span class="t-ts">[08:42:13]</span> Grid compatible CCS-2 charger booked at KM-142 (Stn #4)</div>
+                  <div class="t-log warn"><span class="t-ts">[08:42:15]</span> Telemetry alert: Station #7 offline. Self-healing reroute active</div>
+                  <div class="t-log ok"><span class="t-ts">[08:42:16]</span> Alternative verified: 120kW Supercharger reserved with zero delay</div>
+                </div>
+                <div class="telemetry-chart-bar">
+                  <div class="chart-label"><span>GRID LOAD BALANCING</span><span>82% EFFICIENCY</span></div>
+                  <div class="chart-track"><div class="chart-fill" style="width: 82%;"></div></div>
+                </div>
+              </div>
             </div>
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-visual visual-commerce">
-            <div class="visual-copy">Launch Week</div>
-            <div class="visual-pill">Animated Storytelling</div>
-          </div>
-          <div class="project-copy">
-            <p class="project-type">Marketing Site</p>
-            <h3>Motion Commerce Landing</h3>
-            <p>Large product framing, high-contrast sections, and CTA placement designed to make a single page feel like
-              a complete campaign.</p>
-            <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
-              <a href="#" class="secondary-button"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a href="#" class="primary-button"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+        <!-- 2. SECONDARY PROJECTS ROW -->
+        <div class="projects-subgrid">
+          <!-- Urban Heat Island Mitigation -->
+          <article class="project-card glass-card reveal">
+            <div class="project-card-header">
+              <div class="project-badge-row">
+                <span class="project-type-pill">Geospatial / ML</span>
+                <span class="project-year-pill">2026</span>
+              </div>
+              <h3 class="project-title">Urban Heat Island Mitigation</h3>
+              <p class="project-tagline">Satellite Telemetry &amp; Geospatial Simulation</p>
             </div>
-          </div>
-        </article>
+            <p class="project-description">
+              Geospatial environmental modeling pipeline processing satellite thermal imagery to identify critical urban heat islands and simulate climate-resilient urban cooling infrastructure.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-js"></i> TypeScript</span>
+              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-map-location-dot"></i> GIS &amp; GeoJSON</span>
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/urban_heat_mitigation" target="_blank" rel="noopener noreferrer" class="primary-button">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="#contact" class="secondary-button">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Case Study
+              </a>
+            </div>
+          </article>
 
-        <article class="project-card reveal">
-          <div class="project-visual visual-lab">
-            <div class="terminal-line wide"></div>
-            <div class="terminal-line mid"></div>
-            <div class="terminal-line short"></div>
-          </div>
-          <div class="project-copy">
-            <p class="project-type">AI Product UI</p>
-            <h3>Prompt Workflow Studio</h3>
-            <p>A concept for teams managing prompts, agents, and automations with a visual system that feels technical
-              and modern.</p>
-            <div class="project-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
-              <a href="#" class="secondary-button"><i class="fa-brands fa-github"></i> GitHub</a>
-              <a href="#" class="primary-button"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>
+          <!-- Text Pro Editor -->
+          <article class="project-card glass-card reveal">
+            <div class="project-card-header">
+              <div class="project-badge-row">
+                <span class="project-type-pill">Software Engineering</span>
+                <span class="project-year-pill">Java Desktop</span>
+              </div>
+              <h3 class="project-title">Text Pro Editor</h3>
+              <p class="project-tagline">High-Performance Text Processing &amp; IDE Suite</p>
             </div>
-          </div>
-        </article>
+            <p class="project-description">
+              Lightweight, high-performance Java text editor with regex search analytics, syntax highlighting, multi-file I/O buffer management, and modular architecture.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-java"></i> Java 17</span>
+              <span class="tech-tag"><i class="fa-solid fa-code"></i> JavaFX / Swing</span>
+              <span class="tech-tag"><i class="fa-solid fa-magnifying-glass"></i> Regex Engine</span>
+              <span class="tech-tag"><i class="fa-solid fa-file-code"></i> File I/O</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/Text-Pro" target="_blank" rel="noopener noreferrer" class="primary-button">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://github.com/cs1m2414238/Text-Pro" target="_blank" rel="noopener noreferrer" class="secondary-button">
+                <i class="fa-solid fa-code-branch"></i> Source Code
+              </a>
+            </div>
+          </article>
+
+          <!-- Amazon ML Challenge -->
+          <article class="project-card glass-card reveal">
+            <div class="project-card-header">
+              <div class="project-badge-row">
+                <span class="project-type-pill">Machine Learning / Data</span>
+                <span class="project-year-pill">Challenge 2026</span>
+              </div>
+              <h3 class="project-title">Amazon ML Challenge</h3>
+              <p class="project-tagline">Multimodal Feature Extraction &amp; Predictive Pipeline</p>
+            </div>
+            <p class="project-description">
+              High-throughput ML pipeline designed for the national challenge, featuring automated text/image multimodal feature extraction, dimensionality reduction, and ensemble gradient boosting.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-brain"></i> PyTorch</span>
+              <span class="tech-tag"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
+              <span class="tech-tag"><i class="fa-solid fa-table"></i> Pandas / NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/amazonML" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Amazon ML GitHub">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+              <a href="https://github.com/cs1m2414238/amazonML" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="Pipeline Code">
+                <i class="fa-solid fa-code"></i> Pipeline Code
+              </a>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ========================= 6. website Stats SECTION ========================= -->
-    <section class="section" id="website-stats">
+    <!-- ========================= 5. COMPACT GITHUB ACTIVITY SECTION ========================= -->
+    <section class="section github-section" id="github">
+      <span id="website-stats" class="visually-hidden" aria-hidden="true"></span>
       <div class="section-heading reveal">
-        <p class="section-kicker">Website Stats</p>
-        <h2>Website Stats</h2>
+        <p class="section-kicker">Developer Proof of Work</p>
+        <h2>GitHub Activity</h2>
       </div>
-      <div class="glass-card github-card reveal">
-        <i class="fa-brands fa-github github-icon"></i>
-        <h3 class="github-title">Open Source &amp; Repositories</h3>
-        <p class="github-desc">Explore my latest commits, repositories, and open source work.</p>
-        <div class="github-stats-row">
-          <div class="github-stat-item">
-            <h4 class="github-stat-number">30+</h4>
-            <span class="github-stat-label">Repositories</span>
+
+      <div class="github-compact-container reveal">
+        <!-- Top Split: Compact Profile + Language Distribution -->
+        <div class="github-overview-split">
+          <!-- Developer Identity Badge -->
+          <div class="glass-card github-identity-card" id="github-profile">
+            <div class="gh-compact-user">
+              <div class="gh-compact-avatar-wrap">
+                <img class="gh-compact-avatar" src="https://avatars.githubusercontent.com/u/184855110?v=4" alt="Priyanshu Sharma" onerror="this.src='https://github.com/cs1m2414238.png'" />
+                <span class="gh-pulse-dot" title="Active on GitHub"></span>
+              </div>
+              <div class="gh-compact-meta">
+                <div class="gh-name-line">
+                  <h4>Priyanshu Sharma</h4>
+                  <a class="gh-user-pill" href="https://github.com/cs1m2414238" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-github"></i> @cs1m2414238
+                  </a>
+                </div>
+                <p class="gh-role-sub">Backend • AI/ML • Agentic Systems</p>
+                <div class="gh-quick-tags">
+                  <span><i class="fa-solid fa-code-branch"></i> <strong id="gh-public-repos-count">20</strong> Public Repositories</span>
+                  <span><i class="fa-solid fa-location-dot"></i> Kanpur, India</span>
+                </div>
+              </div>
+            </div>
+            <div class="gh-identity-actions">
+              <a class="secondary-button" href="https://github.com/cs1m2414238" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> Follow
+              </a>
+              <button class="icon-button" type="button" onclick="copyProfileUrl(event)" title="Copy GitHub Profile URL">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
           </div>
-          <div class="github-stat-item">
-            <h4 class="github-stat-number">1,200+</h4>
-            <span class="github-stat-label">Contributions</span>
+
+          <!-- Compact Language Ecosystem -->
+          <div class="glass-card github-languages-card">
+            <div class="gh-card-header-compact">
+              <span class="gh-hdr-title"><i class="fa-solid fa-code"></i> Language Ecosystem</span>
+              <span class="gh-hdr-pill">Live from Repos</span>
+            </div>
+            <div id="gh-languages-container" class="gh-languages-bars">
+              <!-- Dynamically populated language progress bars -->
+              <div class="lang-bar-item">
+                <div class="lang-bar-header">
+                  <span class="lang-name-tag"><span class="lang-dot java-dot"></span> Java</span>
+                  <span>45%</span>
+                </div>
+                <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 45%; background-color: #b07219;"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-bar-header">
+                  <span class="lang-name-tag"><span class="lang-dot ts-dot"></span> TypeScript</span>
+                  <span>20%</span>
+                </div>
+                <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 20%; background-color: #3178c6;"></div></div>
+              </div>
+              <div class="lang-bar-item">
+                <div class="lang-bar-header">
+                  <span class="lang-name-tag"><span class="lang-dot python-dot"></span> Python</span>
+                  <span>18%</span>
+                </div>
+                <div class="lang-bar-track"><div class="lang-bar-fill" style="width: 18%; background-color: #3572A5;"></div></div>
+              </div>
+            </div>
           </div>
         </div>
-        <a class="primary-button" href="https://github.com/" target="_blank" rel="noopener">
-          View GitHub Profile
-        </a>
-      </div>
-    </section>
 
-    <!-- ========================= 8. ABOUT SECTION ========================= -->
-    <section class="section" id="about">
-      <div class="section-heading reveal">
-        <p class="section-kicker"></p>
-        <h2>About Me</h2>
-      </div>
-      <div class="about-grid">
-        <article class="glass-card personal-story-card reveal">
-          <p class="card-label">Hello Folks <span class="waving-hand">👋😊</span></p>
-          <div class="story-paragraphs" style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 1.1rem; line-height: 1.8; text-align: left;">
-            <p>I'm <strong>Priyanshu Sharma</strong>, a passionate Software Developer currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering.</p>
-            <p>I have a strong interest in Backend Development and problem-solving, with hands-on experience in Java, Spring Boot, MySQL, and RESTful APIs. I enjoy designing and developing scalable applications that solve real-world challenges while following industry best practices.</p>
-            <p>Alongside backend development, I actively strengthen my Data Structures & Algorithms skills and work on projects that enhance my understanding of software engineering, system design, and modern development tools.</p>
-            <p>I am continuously learning, building, and exploring new technologies with the goal of becoming a skilled Software Engineer and contributing to impactful products and innovative solutions.</p>
+        <!-- 3 Featured / Recent Repositories Grid -->
+        <div class="github-featured-repos-wrapper">
+          <div class="gh-repos-hdr">
+            <span><i class="fa-regular fa-folder-open"></i> Key Public Repositories</span>
+            <span class="gh-status-indicator" id="github-status">
+              <span class="sync-dot online"></span>
+              <span id="github-status-text">Connected</span>
+            </span>
           </div>
-        </article>
+
+          <div id="github-repos" class="github-compact-repos-grid">
+            <!-- Dynamically populated with 3 repositories: vidyut, amazonML, urban_heat_mitigation -->
+          </div>
+        </div>
+
+        <!-- Single Clean Bottom Action -->
+        <div class="github-bottom-cta">
+          <a class="primary-button" href="https://github.com/cs1m2414238" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> View All Repositories on GitHub &rarr;
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ========================= 9. JOURNEY / TIMELINE ========================= -->
-    <section class="section" id="journey">
-      <div class="about-layout">
-        <div class="section-heading reveal">
-          <p class="section-kicker">Timeline</p>
-          <h2>My Journey</h2>
-          <p class="about-copy">From writing my first Hello World to building full-stack systems — here are the
-            milestones that shaped my development path.</p>
-        </div>
-        <div class="journey-schedule-container reveal">
-          <div class="schedule-header">
-            <h3>My Journey</h3>
-            <p>Milestones &amp; Path</p>
+    <section class="section journey-section" id="journey">
+      <div class="section-heading reveal">
+        <p class="section-kicker">Roadmap</p>
+        <h2>Engineering Journey</h2>
+      </div>
+
+      <div class="horizontal-timeline-wrapper reveal">
+        <!-- Horizontal Milestone Grid -->
+        <div class="horizontal-timeline-grid">
+          <!-- 2024 Node -->
+          <div class="timeline-column">
+            <div class="milestone-station">
+              <div class="milestone-badge">2024</div>
+              <div class="node-track-wrapper">
+                <div class="milestone-node">
+                  <div class="node-core"></div>
+                </div>
+              </div>
+              <div class="milestone-stem"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-content">
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
+                    <h4>Programming Foundations</h4>
+                  </div>
+                  <p class="schedule-tech">C · Java · Object-Oriented Programming</p>
+                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Oct 2024 · Core CS Foundations</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="schedule-timeline">
-            <!-- Phase 1 -->
-            <div class="schedule-row">
-              <div class="schedule-label">PH-01</div>
-              <div class="schedule-dot-container">
-                <div class="schedule-dot"></div>
+
+          <!-- 2025 Node -->
+          <div class="timeline-column">
+            <div class="milestone-station">
+              <div class="milestone-badge">2025</div>
+              <div class="node-track-wrapper">
+                <div class="milestone-node">
+                  <div class="node-core"></div>
+                </div>
               </div>
-              <div class="schedule-card">
-                <div class="card-options"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                <div class="schedule-card-content">
-                  <div class="schedule-item">
-                    <h4>Foundations of CS</h4>
-                    <p class="schedule-time">[ C, Java &amp; OOP · OCT 2024 ]</p>
-                  </div>
-                  <div class="schedule-item">
+              <div class="milestone-stem"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-content">
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
                     <h4>Algorithms &amp; DSA</h4>
-                    <p class="schedule-time">[ Competitive Coding · JAN 2025 ]</p>
+                    <span class="track-badge badge-ongoing"><span class="badge-dot"></span>ONGOING</span>
                   </div>
+                  <p class="schedule-tech">Data Structures · Competitive Programming · Trees &amp; DP</p>
+                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Jan 2025 · Problem Solving</p>
+                </div>
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
+                    <h4>Frontend Engineering</h4>
+                    <span class="track-badge badge-active"><span class="badge-dot"></span>ACTIVE</span>
+                  </div>
+                  <p class="schedule-tech">HTML5 · CSS3 · ES6+ JavaScript · React</p>
+                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Dec 2025 · Modern UI &amp; Motion</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Phase 2 -->
-            <div class="schedule-row active">
-              <div class="schedule-label">PH-02</div>
-              <div class="schedule-dot-container">
-                <div class="schedule-dot"></div>
+          <!-- 2026 Node -->
+          <div class="timeline-column">
+            <div class="milestone-station">
+              <div class="milestone-badge">2026</div>
+              <div class="node-track-wrapper">
+                <div class="milestone-node">
+                  <div class="node-core"></div>
+                </div>
               </div>
-              <div class="schedule-card active-gradient">
-                <div class="card-options"><span class="current-badge">CURRENT</span><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                <div class="schedule-card-content">
-                  <div class="schedule-item">
-                    <h4>Frontend Development</h4>
-                    <p class="schedule-time">[ React, HTML5, CSS3, JS · DEC 2025  ]</p>
+              <div class="milestone-stem"></div>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-card-content">
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
+                    <h4>Backend Engineering</h4>
+                    <span class="track-badge badge-active"><span class="badge-dot"></span>ACTIVE</span>
                   </div>
-                  <div class="schedule-item">
-                    <h4>Backend Development</h4>
-                    <p class="schedule-time">[ Spring Boot &amp; Databases · JUN 2026 ]</p>
+                  <p class="schedule-tech">Java · Spring Boot · REST APIs · SQL · PostgreSQL</p>
+                  <p class="schedule-meta"><i class="fa-solid fa-server"></i> Scalable Server Architectures</p>
+                </div>
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
+                    <h4>Systems &amp; DevOps</h4>
+                    <span class="track-badge badge-learning"><span class="badge-dot"></span>LEARNING</span>
                   </div>
+                  <p class="schedule-tech">Docker · Linux Environments · Git &amp; CI/CD</p>
+                  <p class="schedule-meta"><i class="fa-solid fa-cubes"></i> Containers &amp; Deployment Workflows</p>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Phase 3 -->
-            <div class="schedule-row">
-              <div class="schedule-label">PH-03</div>
-              <div class="schedule-dot-container">
-                <div class="schedule-dot"></div>
+          <!-- NEXT Node -->
+          <div class="timeline-column timeline-column-next">
+            <div class="milestone-station">
+              <div class="milestone-badge milestone-badge-next">NEXT</div>
+              <div class="node-track-wrapper">
+                <div class="milestone-node node-next">
+                  <div class="node-core"></div>
+                </div>
               </div>
-              <div class="schedule-card">
-                <div class="card-options"><i class="fa-solid fa-ellipsis-vertical"></i></div>
-                <div class="schedule-card-content">
-                  <div class="schedule-item">
-                    <h4>Advanced Systems</h4>
-                    <p class="schedule-time">[ Microservices &amp; Design Patterns · Upcoming ]</p>
+              <div class="milestone-stem stem-next"></div>
+            </div>
+            <div class="timeline-card card-next">
+              <div class="timeline-card-content">
+                <div class="schedule-item">
+                  <div class="schedule-item-header">
+                    <h4>Distributed Systems &amp; Cloud</h4>
+                    <span class="track-badge badge-next"><span class="badge-dot"></span>EXPLORING</span>
                   </div>
-                  <div class="schedule-item">
-                    <h4>DevOps &amp; Cloud</h4>
-                    <p class="schedule-time">[ Docker &amp; Production Deploy · Upcoming ]</p>
-                  </div>
+                  <p class="schedule-tech">Microservices · System Design · Cloud Architecture</p>
+                  <p class="schedule-meta"><i class="fa-solid fa-cloud"></i> High-Throughput &amp; Resilient Systems</p>
                 </div>
               </div>
             </div>
@@ -724,56 +932,45 @@
     
     <!-- ========================= 11. CONTACT SECTION ========================= -->
     <section class="section contact-section" id="contact">
-      <div class="section-heading reveal">
-        <p class="section-kicker">Let's Connect</p>
-        <h2>Get In Touch</h2>
-      </div>
       <div class="contact-grid reveal">
-        <!-- Ways to connect -->
+        <!-- Left: Heading & description -->
         <div class="contact-info">
-          <p>Open to internships, freelance projects, and full-time opportunities. Let's build something great together.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:[EMAIL_ADDRESS]" class="contact-link-item">
-              <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div class="contact-link-details">
-                <span class="contact-link-label">Email</span>
-                <span class="contact-link-value">priyanshu@example.com</span>
-              </div>
-            </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="contact-link-item">
-              <div class="contact-link-icon"><i class="fa-brands fa-linkedin"></i></div>
-              <div class="contact-link-details">
-                <span class="contact-link-label">LinkedIn</span>
-                <span class="contact-link-value">linkedin.com/in/priyanshu</span>
-              </div>
-            </a>
-            <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link-item">
-              <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
-              <div class="contact-link-details">
-                <span class="contact-link-label">GitHub</span>
-                <span class="contact-link-value">github.com/cs1m2414238</span>
-              </div>
-            </a>
-          </div>
+          <h2 class="contact-title">Get In Touch</h2>
+          <p class="contact-description">Open to internships, freelance projects, and full-time opportunities. Let's build something great together.</p>
         </div>
 
-        <!-- Contact form -->
+        <!-- Right: Contact form -->
         <div class="glass-card contact-form-card">
-          <form class="contact-form" action="#" method="POST"
-            onsubmit="event.preventDefault(); alert('Message sent!');">
-            <div class="form-group">
-              <label for="form-name">Name</label>
-              <input type="text" id="form-name" placeholder="Your Name" required class="contact-input">
+          <form class="contact-form" id="contact-form" action="#" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="form-name">Name</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-user input-icon"></i>
+                  <input type="text" id="form-name" placeholder="Your Name" required class="contact-input">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email</label>
+                <div class="input-wrapper">
+                  <i class="fa-regular fa-envelope input-icon"></i>
+                  <input type="email" id="form-email" placeholder="your.email@example.com" required class="contact-input">
+                </div>
+              </div>
             </div>
             <div class="form-group">
-              <label for="form-email">Email</label>
-              <input type="email" id="form-email" placeholder="your.email@example.com" required class="contact-input">
+              <label for="form-subject">Subject</label>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-tag input-icon"></i>
+                <input type="text" id="form-subject" placeholder="Project inquiry, job opportunity, etc." required class="contact-input">
+              </div>
             </div>
             <div class="form-group">
               <label for="form-message">Message</label>
-              <textarea id="form-message" rows="4" placeholder="Your message..." required
-                class="contact-input"></textarea>
+              <div class="input-wrapper">
+                <i class="fa-regular fa-comment-dots input-icon textarea-icon"></i>
+                <textarea id="form-message" rows="4" placeholder="Tell me about your project, timeline, or idea..." required class="contact-input"></textarea>
+              </div>
             </div>
             <button type="submit" class="primary-button contact-submit-btn">
               <i class="fa-solid fa-paper-plane"></i> Send Message
@@ -793,11 +990,11 @@
         <p class="footer-tech-stack">Built with HTML, CSS, JS &amp; GSAP</p>
       </div>
 
-      <!-- Quick navigation -->
       <nav class="footer-nav" aria-label="Footer Navigation">
         <a href="#home">Home</a>
-        <a href="#learning-stacktree">Skills</a>
+        <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#github">GitHub</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -806,9 +1003,9 @@
       <div class="footer-socials">
         <a href="https://github.com/cs1m2414238" target="_blank" rel="noopener" aria-label="GitHub"><i
             class="fa-brands fa-github"></i></a>
-        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+        <a href="https://linkedin.com/in/priyanshu" target="_blank" rel="noopener" aria-label="LinkedIn"><i
             class="fa-brands fa-linkedin"></i></a>
-        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i
+        <a href="https://x.com/cs1m2414238" target="_blank" rel="noopener" aria-label="X"><i
             class="fa-brands fa-x-twitter"></i></a>    
       </div>
     </div>
@@ -839,6 +1036,15 @@
     </div>
   </div>
   <button class="popup-scrim" id="popupScrim" onclick="closePopup()"></button>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast-notification" role="status" aria-live="polite">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-message">
+      <span class="toast-title">Message Sent!</span>
+      <span class="toast-text">Thank you! Your message has been received.</span>
+    </div>
+  </div>
 
   <!-- Load external libraries first -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
