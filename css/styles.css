@@ -3595,8 +3595,12 @@ body[data-theme="dawn"] .compact-repo-card:hover {
    CONTACT SECTION
    ========================================================================== */
 .contact-section {
-  padding-top: clamp(1.5rem, 3vw, 2.25rem);
-  padding-bottom: 0.5rem;
+  min-height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(4.5rem, 7vw, 6rem);
+  padding-bottom: 2rem;
   scroll-margin-top: 75px;
   position: relative;
 }
@@ -3843,7 +3847,7 @@ body[data-theme="dawn"] .contact-submit-btn {
   width: 100%;
   border-top: 1px solid var(--line);
   padding: 1rem 0;
-  margin-top: 1rem;
+  margin-top: 0;
 }
 
 .footer-grid {
