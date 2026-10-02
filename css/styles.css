@@ -753,10 +753,10 @@ body[data-theme="dawn"] .toast-text {
 }
 
 .section {
-  width: min(1450px, 100%);
+  width: min(1280px, 100%);
   margin-inline: auto;
-  padding: clamp(3rem, 5vw, 5rem) clamp(1.2rem, 5vw, 2.5rem);
-  scroll-margin-top: 90px;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.2rem, 5vw, 2.5rem);
+  scroll-margin-top: 95px;
 }
 
 .hero {
@@ -772,11 +772,11 @@ body[data-theme="dawn"] .toast-text {
 .section-kicker,
 .card-label,
 .project-type {
-  margin: 0 0 0.9rem;
-  color: var(--muted);
-  font-size: 0.95rem;
+  margin: 0 0 0.8rem;
+  color: var(--accent);
+  font-size: 0.88rem;
   font-weight: 700;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
@@ -795,21 +795,21 @@ body[data-theme="dawn"] .toast-text {
 .contact-title {
   margin: 0;
   font-family: var(--hero-title);
-  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
+  font-size: clamp(2.4rem, 4.5vw, 3.3rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.15;
-  background: linear-gradient(135deg, #ffffff 40%, rgba(255, 255, 255, 0.7) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  line-height: 1.12;
+  color: #ffffff;
+  -webkit-text-fill-color: initial;
+  background: none;
 }
 
 body[data-theme="dawn"] .section-heading h2,
 body[data-theme="dawn"] .contact-card h2,
 body[data-theme="dawn"] .contact-title {
-  background: linear-gradient(135deg, #0f172a 40%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
+  -webkit-text-fill-color: initial;
+  background: none;
 }
 
 @media (max-width: 768px) {
@@ -1642,7 +1642,7 @@ body[data-theme="dawn"] .project-card:hover {
   flex-direction: column;
   gap: 2rem;
   width: 100%;
-  max-width: 1240px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -2093,7 +2093,7 @@ body[data-theme="dawn"] .project-card:hover {
 
 .horizontal-timeline-wrapper {
   width: 100%;
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
   position: relative;
 }
 
@@ -3094,7 +3094,7 @@ body[data-theme="dawn"] .tech-chip:hover {
   flex-direction: column;
   gap: 1.5rem;
   width: 100%;
-  max-width: 1240px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -3623,20 +3623,17 @@ body[data-theme="dawn"] .compact-repo-card:hover {
 }
 
 .contact-title {
-  font-size: clamp(1.85rem, 2.8vw, 2.35rem);
+  margin: 0;
+  font-family: var(--hero-title);
+  font-size: clamp(2.4rem, 4.5vw, 3.3rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  margin: 0;
-  background: linear-gradient(135deg, #ffffff 40%, rgba(255, 255, 255, 0.65) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.15;
+  line-height: 1.12;
+  color: #ffffff;
 }
 
 body[data-theme="dawn"] .contact-title {
-  background: linear-gradient(135deg, #0f172a 40%, #334155 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0f172a;
 }
 
 .contact-description {
