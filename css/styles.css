@@ -753,10 +753,10 @@ body[data-theme="dawn"] .toast-text {
 }
 
 .section {
-  width: min(1280px, 100%);
+  width: min(1450px, 100%);
   margin-inline: auto;
-  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.2rem, 5vw, 2.5rem);
-  scroll-margin-top: 95px;
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.2rem, 5vw, 2.5rem);
+  scroll-margin-top: 90px;
 }
 
 .hero {
@@ -769,22 +769,31 @@ body[data-theme="dawn"] .toast-text {
 }
 
 .eyebrow,
-.section-kicker,
 .card-label,
 .project-type {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.section-kicker {
   margin: 0 0 0.8rem;
   color: var(--accent);
   font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .hero h1 {
   margin: 0;
   font-family: var(--hero-title);
   letter-spacing: -0.04em;
-  line-height: 0.95;
+  line-height: 0.9;
   font-size: clamp(4rem, 10vw, 7.4rem);
   min-height: 1.1em;
   contain: layout;
@@ -1634,7 +1643,6 @@ body[data-theme="dawn"] .project-card:hover {
 
 .projects-section {
   position: relative;
-  width: 100%;
 }
 
 .projects-showcase-grid {
@@ -2077,8 +2085,6 @@ body[data-theme="dawn"] .project-card:hover {
 
 /* ========================= HORIZONTAL JOURNEY TIMELINE ========================= */
 .journey-section {
-  width: min(1400px, calc(100% - 2rem));
-  margin-inline: auto;
   padding-block: clamp(3.5rem, 7vw, 6rem);
 }
 
@@ -3086,7 +3092,6 @@ body[data-theme="dawn"] .tech-chip:hover {
    ========================================================================== */
 .github-section {
   position: relative;
-  width: 100%;
 }
 
 .github-compact-container {
@@ -3601,7 +3606,7 @@ body[data-theme="dawn"] .compact-repo-card:hover {
   justify-content: space-between;
   align-items: center;
   gap: clamp(2rem, 5vw, 4.5rem);
-  max-width: 1060px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
 }

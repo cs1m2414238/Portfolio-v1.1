@@ -1,9 +1,9 @@
 /* COMPETITIVE STATS DASHBOARD - GLASSMORPHISM THEMED */
 
 #stats-panel-section {
-  padding: clamp(2rem, 4vw, 3.5rem) clamp(1.2rem, 5vw, 2.5rem);
-  width: min(1280px, 100%);
-  max-width: 1280px;
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.2rem, 5vw, 2.5rem);
+  width: min(1450px, 100%);
+  max-width: 1450px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -11,7 +11,7 @@
   position: relative;
   overflow: visible;
   z-index: 1;
-  scroll-margin-top: 95px;
+  scroll-margin-top: 90px;
 }
 
 #stats-panel-section .section-heading {
