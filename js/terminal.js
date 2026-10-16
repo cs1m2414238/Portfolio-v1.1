@@ -359,6 +359,7 @@ document.addEventListener("DOMContentLoaded", () => {
   - <span class="info">skills</span>: Display core programming stack & tools<br>
   - <span class="info">projects</span>: List featured software engineering work<br>
   - <span class="info">stats</span>: Show competitive programming statistics<br>
+  - <span class="info">github</span>: View GitHub profile & repositories<br>
   - <span class="info">contact</span>: Print contact information<br>
   - <span class="info">theme</span>: Toggle portfolio dark/light theme mode<br>
   - <span class="info">clear</span>: Clear terminal history<br>
@@ -421,6 +422,20 @@ Scrolling to stats dashboard...`;
         const statsSec = document.getElementById("stats-panel-section");
         if (statsSec) {
           statsSec.scrollIntoView({ behavior: "smooth" });
+        }
+        break;
+
+      case "github":
+        output = `<strong>GitHub Profile & Ecosystem:</strong><br>
+---------------------------------------------<br>
+- <span class="info">User:</span> Priyanshu Sharma (@cs1m2414238)<br>
+- <span class="info">Repositories:</span> 20+ public repositories<br>
+- <span class="info">Primary Languages:</span> Java, TypeScript, Python, HTML/CSS<br>
+- <span class="info">Profile Link:</span> <a href="https://github.com/cs1m2414238" target="_blank" class="terminal-link">github.com/cs1m2414238</a><br><br>
+Scrolling to GitHub section...`;
+        const ghSec = document.getElementById("github");
+        if (ghSec) {
+          ghSec.scrollIntoView({ behavior: "smooth" });
         }
         break;
 

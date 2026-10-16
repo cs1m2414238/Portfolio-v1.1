@@ -1,0 +1,46 @@
+type Query {
+    codingProfiles: [CodingProfile!]!
+    codingProfile(platform: Platform!): CodingProfile
+}
+
+type Mutation {
+    updateCodingProfile(input: UpdateCodingProfileInput!): CodingProfile
+}
+
+input UpdateCodingProfileInput {
+    platform: Platform!
+    problemsSolved: Int
+    rating: String
+    streak: Int
+    badge: String
+    globalRank: String
+}
+
+enum Platform {
+    LEETCODE
+    GEEKSFORGEEKS
+    CODEFORCES
+    CODECHEF
+    HACKERRANK
+}
+
+type Metric {
+    label: String!
+    value: String!
+    subtext: String
+}
+
+type CodingProfile {
+    platform: Platform!
+    name: String!
+    username: String!
+    profileUrl: String!
+    avatarUrl: String
+    problemsSolved: Int
+    rating: String
+    globalRank: String
+    badge: String
+    streak: Int
+    metrics: [Metric!]!
+    active: Boolean
+}

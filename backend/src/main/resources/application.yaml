@@ -1,10 +1,32 @@
-spring.application.name=portfolio-backend
+spring:
+  application:
+    name: portfolio-backend
 
-spring.mail.host=smtp.gmail.com
-spring.mail.port=587
+  graphql:
+    graphiql:
+      enabled: true
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST,OPTIONS
 
-spring.mail.username=${MAIL_USERNAME}
-spring.mail.password=${MAIL_PASSWORD}
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
 
-spring.mail.properties.mail.smtp.auth=true
-spring.mail.properties.mail.smtp.starttls.enable=true
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+app:
+  mail:
+    recipient: ${MAIL_RECIPIENT:${spring.mail.username:}}
+
+github:
+  username: ${GITHUB_USERNAME:cs1m2414238}
+  token: ${GITHUB_PAT:${GITHUB_TOKEN:}}

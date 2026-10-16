@@ -107,7 +107,7 @@
         <div class="hero-buttons-grid">
           <a class="primary-button" href="#projects">Explore Work</a>
           <a class="secondary-button" href="#contact">Hire Me</a>
-          <a class="secondary-button resume-btn" href="#" download aria-label="Download Resume">
+          <a class="secondary-button resume-btn" href="assets/Priyanshu_Sharma_Resume.pdf" download="Priyanshu_Sharma_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
             <i class="fa-solid fa-cloud-arrow-down"></i> Download Resume
           </a>
         </div>
@@ -194,7 +194,7 @@
     <!--  2. STACK TREE ========================= -->
     <section class="learning-stacktree section" id="skills">
       <div class="section-heading reveal">
-        <p class="section-kicker">Stack Tree</p>
+      
         <h2>Full Stack Dev</h2>
       </div>
 
@@ -290,253 +290,268 @@
     </section>
 
 
-    <!-- -------------------------- 3. Competetive coding section ----------------- -->
+    <!-- -------------------------- 3. Problem Solving / Coding Profiles section ----------------- -->
     <section class="section" id="stats-panel-section">
       <div class="section-heading reveal">
-        <h2>Dashboard</h2>
+        <h2>Coding Profiles</h2>
+        <span class="section-badge" id="graphql-status" style="display: none;"><span class="sync-dot"></span> <span id="graphql-status-text">GraphQL Live</span></span>
       </div>
 
-      <!-- stats card with glassmorphism applied -->
-      <article class="stats-card reveal">
-        <!-- Header Block -->
-        <div class="header">
-          <div class="title-group">
-            <span class="orange-dot"></span>
-            <span class="panel-title">COMPETITIVE PROGRAMMING</span>
-            <span class="panel-subtitle">· STATS PANEL</span>
-          </div>
-          <div class="user-info">
-            USER: devhandle <span class="user-status">01:54:52</span>
-          </div>
-        </div>
-
-        <!-- Sub Navigation Tabs -->
-        <div class="tabs">
-          <div class="tab active">✦ LEETCODE</div>
-          <div class="tab">✦ HACKERRANK</div>
-          <div class="tab">✦ CODEFORCES</div>
-          <div class="tab">✦ CODECHEF</div>
-          <div class="tab">✦ GeeksforGeeks</div>
-        </div>
-
-        <!-- Tab Content Wrapper -->
-        <div id="stats-tab-content">
-          <!-- Upper Stats Summary Metrics Box Grid -->
-          <div class="summary-grid">
-            <div class="stat-card">
-              <div class="stat-value val-orange">48,312</div>
-              <div class="stat-label">Global Rank</div>
+      <!-- 5-Cards Grid matching screenshot -->
+      <div class="coding-profiles-cards-grid reveal">
+        <!-- 1. LeetCode Card -->
+        <article class="coding-profile-card" data-platform="leetcode">
+          <div class="card-top">
+            <div class="platform-brand">
+              <div class="platform-icon lc-icon" aria-label="LeetCode">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.874 5.874 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .666-1.794l3.76-4.027 5.176-5.54a1.384 1.384 0 0 0-.005-1.956A1.366 1.366 0 0 0 13.483 0zm-2.88 7.283a1.391 1.391 0 0 0-1.214.71 1.401 1.401 0 0 0 .248 1.637l4.059 4.048-4.059 4.048a1.379 1.379 0 0 0 1.95 1.951l5.035-5.022a1.376 1.376 0 0 0 0-1.95l-5.035-5.023a1.398 1.398 0 0 0-.989-.401z" fill="#FFA116"/>
+                </svg>
+              </div>
+              <span class="platform-name">LeetCode</span>
             </div>
-            <div class="stat-card">
-              <div class="stat-value val-green">387</div>
-              <div class="stat-label">Problems Solved</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value val-blue">1,847</div>
-              <div class="stat-label">Contest Rating</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-value val-orange">41</div>
-              <div class="stat-label">Streak (Days)</div>
-            </div>
+            <a href="https://leetcode.com/u/9sY5neJGk8/" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open LeetCode Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
 
-          <!-- Main Content Layout splits Split Columns -->
-          <div class="main-content">
-            <!-- Left Panel: Solve Rate -->
-            <div class="panel-box">
-              <div class="box-header">Solve Rate · Arc Display</div>
-
-              <div class="solve-rate-container">
-                <!-- Left Column (Circle) -->
-                <div class="solve-rate-left">
-                  <!-- Circular Arc Indicator -->
-                  <div class="circle-indicator-wrapper">
-                    <svg class="leetcode-svg" viewBox="0 0 100 100">
-                      <!-- Background Track with bottom gap (continuous, hidden by default) -->
-                      <circle id="graycircle" cx="50" cy="50" r="40" fill="none" stroke="rgba(255, 255, 255, 0.08)"
-                        stroke-width="6" stroke-dasharray="211.3 251.3" stroke-linecap="round"
-                        transform="rotate(120 50 50)" style="opacity: 0;" />
-                      <!-- Background Track Segments with cuts (visible by default) -->
-                      <circle class="track-segment" id="easytrack" cx="50" cy="50" r="40" fill="none"
-                        stroke="rgba(255, 255, 255, 0.08)" stroke-width="6" stroke-dasharray="67 251.3"
-                        stroke-dashoffset="0" stroke-linecap="round" transform="rotate(120 50 50)" />
-                      <circle class="track-segment" id="medtrack" cx="50" cy="50" r="40" fill="none"
-                        stroke="rgba(255, 255, 255, 0.08)" stroke-width="6" stroke-dasharray="67 251.3"
-                        stroke-dashoffset="-71" stroke-linecap="round" transform="rotate(120 50 50)" />
-                      <circle class="track-segment" id="hardtrack" cx="50" cy="50" r="40" fill="none"
-                        stroke="rgba(255, 255, 255, 0.08)" stroke-width="6" stroke-dasharray="67 251.3"
-                        stroke-dashoffset="-142" stroke-linecap="round" transform="rotate(120 50 50)" />
-                      <!-- Easy Arc (green/teal) -->
-                      <circle id="easycircle" cx="50" cy="50" r="40" fill="none" stroke="#06b6d4" stroke-width="6"
-                        stroke-dasharray="67 251.3" stroke-dashoffset="0" stroke-linecap="round"
-                        transform="rotate(120 50 50)" />
-                      <!-- Medium Arc (yellow) -->
-                      <circle id="medcircle" cx="50" cy="50" r="40" fill="none" stroke="#fbbf24" stroke-width="6"
-                        stroke-dasharray="67 251.3" stroke-dashoffset="-71" stroke-linecap="round"
-                        transform="rotate(120 50 50)" />
-                      <!-- Hard Arc (red) -->
-                      <circle id="hardcircle" cx="50" cy="50" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                        stroke-dasharray="67 251.3" stroke-dashoffset="-142" stroke-linecap="round"
-                        transform="rotate(120 50 50)" />
-                    </svg>
-
-                    <!-- Inner stats overlay -->
-                    <div class="circle-inner-content">
-                      <div style="display: flex; align-items: baseline; justify-content: center; gap: 2px;">
-                        <span class="solved-count">185</span>
-                        <span class="total-count">/3957</span>
-                      </div>
-                      <div class="solved-label">
-                        <i class="fa-solid fa-check" style="color: #22c55e; font-size: 0.75rem;"></i> Solved
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Right Column (Cards) -->
-                <div class="solve-rate-right">
-                  <!-- Stacked Difficulty Cards -->
-                  <div class="difficulty-cards-stack">
-                    <!-- Easy -->
-                    <div class="diff-card-item">
-                      <span class="card-label-easy">Easy</span>
-                      <span class="card-values">80<span>/949</span></span>
-                    </div>
-
-                    <!-- Medium -->
-                    <div class="diff-card-item">
-                      <span class="card-label-medium">Med.</span>
-                      <span class="card-values">92<span>/2066</span></span>
-                    </div>
-
-                    <!-- Hard -->
-                    <div class="diff-card-item">
-                      <span class="card-label-hard">Hard</span>
-                      <span class="card-values">13<span>/942</span></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <div class="card-body">
+            <div class="metric-block">
+              <div class="metric-val" id="leetcode-solved">354</div>
+              <div class="metric-lbl">Problems Solved</div>
             </div>
 
-            <!-- Right Panel: Badges -->
-            <div class="panel-box">
-              <div class="box-header">LeetCode Badges</div>
+            <div class="metric-block">
+              <div class="metric-val" id="leetcode-rating">1,481</div>
+              <div class="metric-lbl">Contest Rating</div>
+            </div>
 
-              <div class="badges-container">
-                <!-- Knight Badge -->
-                <div class="badge-item badge-knight">
-                  <div class="badge-icon-knight">
-                    <i class="fa-solid fa-chess-knight"></i>
-                  </div>
-                  <div class="badge-name">Knight</div>
-                  <div class="badge-desc">Contest Rating Top 4.8%</div>
-                </div>
-
-                <!-- Streak Badge -->
-                <div class="badge-item badge-streak">
-                  <div class="badge-icon-streak">
-                    <i class="fa-solid fa-calendar-check"></i>
-                  </div>
-                  <div class="badge-name">50 Days (2025)</div>
-                  <div class="badge-desc">Consecutive coding streak</div>
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <i class="fa-solid fa-chess-knight meta-icon knight-icon"></i>
+                <div class="meta-texts">
+                  <span class="meta-bold">Knight</span>
+                  <span class="meta-sub">Top 50.8%</span>
                 </div>
               </div>
-
-              <div class="meta-row">
-                <span class="meta-label">Acceptance Rate</span>
-                <span class="meta-val-blue">68.4%</span>
-              </div>
-              <div class="meta-row">
-                <span class="meta-label">Contest Rank</span>
-                <span class="meta-val-orange">Knight</span>
+              <div class="meta-item text-right">
+                <span class="meta-bold">41</span>
+                <span class="meta-sub">Streak (Days)</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Heatmap Submission Matrix Row -->
-        <div class="heatmap-box">
-          <div class="box-header">Submission Activity · Last 52 Weeks</div>
-          <div class="heatmap-wrapper">
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-1"></div>
-            <div class="heatmap-cell cell-3"></div>
-            <div class="heatmap-cell cell-2"></div>
-            <div class="heatmap-cell cell-0"></div>
-            <div class="heatmap-cell cell-4"></div>
-            <div class="heatmap-cell cell-1"></div>
+          <a href="https://leetcode.com/u/9sY5neJGk8/" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- 2. GeeksforGeeks Card -->
+        <article class="coding-profile-card" data-platform="geeksforgeeks">
+          <div class="card-top">
+            <div class="platform-brand">
+              <div class="platform-icon gfg-icon" aria-label="GeeksforGeeks">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1.8 14.5c-2.3 0-3.7-1.6-3.7-3.9 0-2.4 1.5-4 3.7-4 1.2 0 2.1.5 2.6 1.2l-1.3 1c-.3-.4-.7-.7-1.3-.7-1.2 0-2 .9-2 2.5 0 1.5.7 2.4 2 2.4.6 0 1.1-.3 1.4-.7l1.3 1c-.6.8-1.5 1.2-2.7 1.2zm6.6 0c-2.3 0-3.7-1.6-3.7-3.9 0-2.4 1.5-4 3.7-4 1.2 0 2.1.5 2.6 1.2l-1.3 1c-.3-.4-.7-.7-1.3-.7-1.2 0-2 .9-2 2.5 0 1.5.7 2.4 2 2.4.6 0 1.1-.3 1.4-.7l1.3 1c-.6.8-1.5 1.2-2.7 1.2z" fill="#22c55e"/>
+                </svg>
+              </div>
+              <span class="platform-name">GeeksforGeeks</span>
+            </div>
+            <a href="https://www.geeksforgeeks.org/user/cs1m2414238/" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open GeeksforGeeks Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
           </div>
-          <div class="heatmap-legend"
-            style="display: flex; align-items: center; justify-content: flex-end; gap: 6px; font-size: 9px; color: var(--text-muted); margin-top: 10px; text-transform: uppercase; letter-spacing: 1px;">
-            <span>Less</span>
-            <div class="heatmap-cell cell-0" style="margin: 0;"></div>
-            <div class="heatmap-cell cell-1" style="margin: 0;"></div>
-            <div class="heatmap-cell cell-2" style="margin: 0;"></div>
-            <div class="heatmap-cell cell-3" style="margin: 0;"></div>
-            <div class="heatmap-cell cell-4" style="margin: 0;"></div>
-            <span>More</span>
+
+          <div class="card-body">
+            <div class="metric-block">
+              <div class="metric-val" id="gfg-solved">4</div>
+              <div class="metric-lbl">Problems Solved</div>
+            </div>
+
+            <div class="metric-block">
+              <div class="metric-val" id="gfg-rank">Rank 821</div>
+              <div class="metric-lbl">Institute Rank &raquo;</div>
+            </div>
+
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <i class="fa-solid fa-fire meta-icon flame-icon"></i>
+                <div class="meta-texts">
+                  <span class="meta-bold">1 Day</span>
+                  <span class="meta-sub">POTD Streak</span>
+                </div>
+              </div>
+              <div class="meta-item text-right">
+                <span class="meta-bold">10</span>
+                <span class="meta-sub">Coding Score</span>
+              </div>
+            </div>
           </div>
-        </div>
-      </article>
+
+          <a href="https://www.geeksforgeeks.org/user/cs1m2414238/" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- 3. Codeforces Card -->
+        <article class="coding-profile-card" data-platform="codeforces">
+          <div class="card-top">
+            <div class="platform-brand">
+              <div class="platform-icon cf-icon" aria-label="Codeforces">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <rect x="2" y="10" width="4.5" height="11" rx="1.5" fill="#FFD400"/>
+                  <rect x="9.5" y="3" width="4.5" height="18" rx="1.5" fill="#2169B3"/>
+                  <rect x="17" y="6" width="4.5" height="15" rx="1.5" fill="#B71234"/>
+                </svg>
+              </div>
+              <span class="platform-name">Codeforces</span>
+            </div>
+            <a href="https://codeforces.com/profile/Unexpectedpriyanshu" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open Codeforces Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="card-body">
+            <div class="metric-block">
+              <div class="metric-val" id="cf-solved">4</div>
+              <div class="metric-lbl">Problems Solved</div>
+            </div>
+
+            <div class="metric-block">
+              <div class="metric-val" id="cf-rating">562</div>
+              <div class="metric-lbl"><i class="fa-solid fa-star" style="color: #f59e0b; font-size: 0.72rem;"></i> Newbie Rating</div>
+            </div>
+
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <i class="fa-solid fa-trophy meta-icon trophy-icon"></i>
+                <div class="meta-texts">
+                  <span class="meta-bold">562</span>
+                  <span class="meta-sub">Max Rating</span>
+                </div>
+              </div>
+              <div class="meta-item text-right">
+                <span class="meta-bold">Newbie</span>
+                <span class="meta-sub">Rank</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://codeforces.com/profile/Unexpectedpriyanshu" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- 4. CodeChef Card -->
+        <article class="coding-profile-card" data-platform="codechef">
+          <div class="card-top">
+            <div class="platform-brand">
+              <div class="platform-icon cc-icon" aria-label="CodeChef">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+                  <path d="M12 2C9.5 2 7.4 3.6 6.6 5.8 5.1 6.2 4 7.6 4 9.3c0 1.6 1 3 2.5 3.5.2 2.6 2.4 4.7 5.1 4.7h.8c2.7 0 4.9-2.1 5.1-4.7 1.5-.5 2.5-1.9 2.5-3.5 0-1.7-1.1-3.1-2.6-3.5C16.6 3.6 14.5 2 12 2zm-5 17h10v2H7v-2z" fill="#e5e7eb"/>
+                  <circle cx="9" cy="11" r="1.2" fill="#5b4638"/>
+                  <circle cx="15" cy="11" r="1.2" fill="#5b4638"/>
+                </svg>
+              </div>
+              <span class="platform-name">CodeChef</span>
+            </div>
+            <a href="https://www.codechef.com/users/cs1m2414238" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open CodeChef Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="card-body">
+            <div class="metric-block">
+              <div class="metric-val" id="cc-solved">-</div>
+              <div class="metric-lbl">Problems Solved</div>
+            </div>
+
+            <div class="metric-block">
+              <div class="metric-val" id="cc-rating">-</div>
+              <div class="metric-lbl">Rating</div>
+            </div>
+
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <i class="fa-solid fa-award meta-icon medal-icon"></i>
+                <div class="meta-texts">
+                  <span class="meta-bold">-</span>
+                  <span class="meta-sub">Division</span>
+                </div>
+              </div>
+              <div class="meta-item text-right">
+                <span class="meta-bold">-</span>
+                <span class="meta-sub">Global Rank</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.codechef.com/users/cs1m2414238" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+
+        <!-- 5. HackerRank Card -->
+        <article class="coding-profile-card" data-platform="hackerrank">
+          <div class="card-top">
+            <div class="platform-brand">
+              <div class="platform-icon hr-icon" aria-label="HackerRank">
+                <svg viewBox="0 0 24 24" width="22" height="22">
+                  <rect width="24" height="24" rx="5" fill="#00EA64"/>
+                  <path d="M7 6v12h3v-4.5h4V18h3V6h-3v4.5h-4V6H7z" fill="#000000"/>
+                </svg>
+              </div>
+              <span class="platform-name">HackerRank</span>
+            </div>
+            <a href="https://www.hackerrank.com/cs1m2414238" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open HackerRank Profile">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <div class="card-body">
+            <div class="metric-block">
+              <div class="metric-val" id="hr-solved">-</div>
+              <div class="metric-lbl">Problems Solved</div>
+            </div>
+
+            <div class="metric-block">
+              <div class="metric-val" id="hr-rating">-</div>
+              <div class="metric-lbl">Rating</div>
+            </div>
+
+            <div class="card-meta-row">
+              <div class="meta-item">
+                <i class="fa-brands fa-hackerrank meta-icon hr-badge-icon"></i>
+                <div class="meta-texts">
+                  <span class="meta-bold">-</span>
+                  <span class="meta-sub">Badges</span>
+                </div>
+              </div>
+              <div class="meta-item text-right">
+                <span class="meta-bold">-</span>
+                <span class="meta-sub">Score</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="https://www.hackerrank.com/cs1m2414238" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+            <span>View Profile</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </article>
+      </div>
     </section>
 
 
     <!-- ========================= 4. FEATURED PROJECTS SECTION ========================= -->
     <section class="section projects-section" id="projects">
       <div class="section-heading reveal">
-        <p class="section-kicker">Engineering Showcase</p>
+        
         <h2>Featured Projects</h2>
-        <p class="section-lead">Autonomous agent architectures, distributed backends, and data intelligence systems built for real-world impact.</p>
       </div>
 
       <div class="projects-showcase-grid">
@@ -544,17 +559,19 @@
         <article class="project-hero-card glass-card reveal">
           <div class="project-hero-content">
             <div class="project-badge-row">
-              <span class="project-flagship-pill"><i class="fa-solid fa-bolt"></i> Flagship Project</span>
-              <span class="project-type-pill">Agentic EV Platform</span>
+              <span class="project-flagship-pill"><i class="fa-solid fa-bolt"></i> Agentic EV Platform</span>
+              <span class="project-type-pill">Startup</span>
             </div>
-            <h3 class="project-title">VIDYUT</h3>
-            <p class="project-tagline">Autonomous Agentic EV Charging &amp; Grid Ecosystem</p>
+            <div class="project-title-group">
+              <h3 class="project-title">VIDYUT</h3>
+              <p class="project-tagline">Autonomous Agentic EV Charging &amp; Grid Ecosystem</p>
+            </div>
             <p class="project-description">
               An AI-powered EV charging ecosystem that autonomously plans long-distance trips, selects compatible charging stations based on live grid telemetry, predicts charger availability, and dynamically reroutes upon station failure with vehicle-linked payments.
             </p>
             <div class="project-tech-stack">
               <span class="tech-tag"><i class="fa-brands fa-java"></i> Spring Boot</span>
-              <span class="tech-tag"><i class="fa-brands fa-react"></i> React Native</span>
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
               <span class="tech-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
               <span class="tech-tag"><i class="fa-solid fa-brain"></i> Gemini AI</span>
               <span class="tech-tag"><i class="fa-solid fa-microchip"></i> Google ADK</span>
@@ -565,46 +582,21 @@
               <a href="https://vidyut1-1.web.app/" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Live Demo Vidyut Platform">
                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
               </a>
-              <a href="https://github.com/cs1m2414238/vidyutEV-1.0" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Vidyut Repository">
+              <a href="https://github.com/cs1m2414238/vidyut-1.1" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Vidyut Repository">
                 <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="https://github.com/cs1m2414238/vidyut-1.1" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Autopilot Agent v1.1">
-                <i class="fa-solid fa-code-fork"></i> Agent v1.1
               </a>
             </div>
           </div>
+
           <div class="project-hero-visual">
-            <div class="dashboard-mockup">
-              <div class="mockup-header">
-                <div class="mockup-dots">
-                  <span></span><span></span><span></span>
-                </div>
-                <div class="mockup-title"><i class="fa-solid fa-terminal"></i> vidyut-autopilot-v1.1 --telemetry</div>
-                <span class="mockup-status-live"><span class="pulse-dot"></span> AUTOPILOT ACTIVE</span>
+            <div class="hero-brand-showcase">
+              <div class="brand-logo-glow"></div>
+              <div class="hero-brand-logo-wrap">
+                <img src="assets/vidyut-logo.svg" alt="Vidyut Ecosystem Logo" class="hero-brand-logo" />
               </div>
-              <div class="mockup-screen">
-                <div class="telemetry-grid">
-                  <div class="telemetry-stat">
-                    <span class="stat-lbl">ROUTE OPTIMIZATION</span>
-                    <span class="stat-num glow-cyan">OPTIMAL</span>
-                    <span class="stat-sub">3 stops mapped • 98.4% conf</span>
-                  </div>
-                  <div class="telemetry-stat">
-                    <span class="stat-lbl">BATTERY TELEMETRY</span>
-                    <span class="stat-num glow-green">78% SOC</span>
-                    <span class="stat-sub">340 km dynamic range</span>
-                  </div>
-                </div>
-                <div class="terminal-logs-window">
-                  <div class="t-log info"><span class="t-ts">[08:42:12]</span> Agent dispatched: Analyzing Kanpur -> Delhi transit corridor</div>
-                  <div class="t-log ok"><span class="t-ts">[08:42:13]</span> Grid compatible CCS-2 charger booked at KM-142 (Stn #4)</div>
-                  <div class="t-log warn"><span class="t-ts">[08:42:15]</span> Telemetry alert: Station #7 offline. Self-healing reroute active</div>
-                  <div class="t-log ok"><span class="t-ts">[08:42:16]</span> Alternative verified: 120kW Supercharger reserved with zero delay</div>
-                </div>
-                <div class="telemetry-chart-bar">
-                  <div class="chart-label"><span>GRID LOAD BALANCING</span><span>82% EFFICIENCY</span></div>
-                  <div class="chart-track"><div class="chart-fill" style="width: 82%;"></div></div>
-                </div>
+              <div class="hero-brand-meta">
+                <span class="hero-brand-name">VIDYUT</span>
+                <span class="hero-brand-tag">Autonomous EV Ecosystem</span>
               </div>
             </div>
           </div>
@@ -706,7 +698,6 @@
     <section class="section github-section" id="github">
       <span id="website-stats" class="visually-hidden" aria-hidden="true"></span>
       <div class="section-heading reveal">
-        <p class="section-kicker">Developer Proof of Work</p>
         <h2>GitHub Activity</h2>
       </div>
 
@@ -802,133 +793,7 @@
     </section>
 
     <!-- ========================= 9. JOURNEY / TIMELINE ========================= -->
-    <section class="section journey-section" id="journey">
-      <div class="section-heading reveal">
-        <p class="section-kicker">Roadmap</p>
-        <h2>Engineering Journey</h2>
-      </div>
-
-      <div class="horizontal-timeline-wrapper reveal">
-        <!-- Horizontal Milestone Grid -->
-        <div class="horizontal-timeline-grid">
-          <!-- 2024 Node -->
-          <div class="timeline-column">
-            <div class="milestone-station">
-              <div class="milestone-badge">2024</div>
-              <div class="node-track-wrapper">
-                <div class="milestone-node">
-                  <div class="node-core"></div>
-                </div>
-              </div>
-              <div class="milestone-stem"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-card-content">
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Programming Foundations</h4>
-                  </div>
-                  <p class="schedule-tech">C · Java · Object-Oriented Programming</p>
-                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Oct 2024 · Core CS Foundations</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2025 Node -->
-          <div class="timeline-column">
-            <div class="milestone-station">
-              <div class="milestone-badge">2025</div>
-              <div class="node-track-wrapper">
-                <div class="milestone-node">
-                  <div class="node-core"></div>
-                </div>
-              </div>
-              <div class="milestone-stem"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-card-content">
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Algorithms &amp; DSA</h4>
-                    <span class="track-badge badge-ongoing"><span class="badge-dot"></span>ONGOING</span>
-                  </div>
-                  <p class="schedule-tech">Data Structures · Competitive Programming · Trees &amp; DP</p>
-                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Jan 2025 · Problem Solving</p>
-                </div>
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Frontend Engineering</h4>
-                    <span class="track-badge badge-active"><span class="badge-dot"></span>ACTIVE</span>
-                  </div>
-                  <p class="schedule-tech">HTML5 · CSS3 · ES6+ JavaScript · React</p>
-                  <p class="schedule-meta"><i class="fa-regular fa-clock"></i> Dec 2025 · Modern UI &amp; Motion</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2026 Node -->
-          <div class="timeline-column">
-            <div class="milestone-station">
-              <div class="milestone-badge">2026</div>
-              <div class="node-track-wrapper">
-                <div class="milestone-node">
-                  <div class="node-core"></div>
-                </div>
-              </div>
-              <div class="milestone-stem"></div>
-            </div>
-            <div class="timeline-card">
-              <div class="timeline-card-content">
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Backend Engineering</h4>
-                    <span class="track-badge badge-active"><span class="badge-dot"></span>ACTIVE</span>
-                  </div>
-                  <p class="schedule-tech">Java · Spring Boot · REST APIs · SQL · PostgreSQL</p>
-                  <p class="schedule-meta"><i class="fa-solid fa-server"></i> Scalable Server Architectures</p>
-                </div>
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Systems &amp; DevOps</h4>
-                    <span class="track-badge badge-learning"><span class="badge-dot"></span>LEARNING</span>
-                  </div>
-                  <p class="schedule-tech">Docker · Linux Environments · Git &amp; CI/CD</p>
-                  <p class="schedule-meta"><i class="fa-solid fa-cubes"></i> Containers &amp; Deployment Workflows</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- NEXT Node -->
-          <div class="timeline-column timeline-column-next">
-            <div class="milestone-station">
-              <div class="milestone-badge milestone-badge-next">NEXT</div>
-              <div class="node-track-wrapper">
-                <div class="milestone-node node-next">
-                  <div class="node-core"></div>
-                </div>
-              </div>
-              <div class="milestone-stem stem-next"></div>
-            </div>
-            <div class="timeline-card card-next">
-              <div class="timeline-card-content">
-                <div class="schedule-item">
-                  <div class="schedule-item-header">
-                    <h4>Distributed Systems &amp; Cloud</h4>
-                    <span class="track-badge badge-next"><span class="badge-dot"></span>EXPLORING</span>
-                  </div>
-                  <p class="schedule-tech">Microservices · System Design · Cloud Architecture</p>
-                  <p class="schedule-meta"><i class="fa-solid fa-cloud"></i> High-Throughput &amp; Resilient Systems</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+   
     
     <!-- ========================= 11. CONTACT SECTION ========================= -->
     <section class="section contact-section" id="contact">
@@ -1054,6 +919,7 @@
   <script src="./js/statpannel.js"></script>
   <script src="./js/terminal.js"></script>
   <script src="./js/script.js"></script>
+  <script src="./js/graphql-client.js"></script>
   <script src="./js/keyboardlighting.js"></script>
 </body>
 

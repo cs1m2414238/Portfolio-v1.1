@@ -47,6 +47,16 @@ function runBootAnimation() {
       // Clear inline transform on the skill board so the CSS 3D hover/tilt works
       gsap.set(".skill-board", { clearProps: "transform" });
 
+
+      //  adding hyoer link to github icon
+      
+      const gitbtn = document.querySelector(".key i.fa-github");
+      if(gitbtn){
+        gitbtn.addEventListener('click', () =>{
+          window.open('https://github.com/cs1m2414238', '_blank')
+        });
+      }
+
       // Enable the terminal continuous prompt cursor blink
       const termIcon = document.querySelector(".key i.fa-terminal");
       if (termIcon) {
@@ -83,11 +93,17 @@ window.addEventListener("preloaderFinished", () => {
 });
 
 // Fallback: run the boot animation on load if the preloader isn't present
-window.addEventListener("load", () => {
+function triggerBootIfReady() {
   if (!document.querySelector(".loading")) {
     setTimeout(runBootAnimation, 400);
   }
-});
+}
+
+if (document.readyState === "complete") {
+  triggerBootIfReady();
+} else {
+  window.addEventListener("load", triggerBootIfReady);
+}
 
 const themeToggleBtn = document.querySelector("#theme-toggle");
 if (themeToggleBtn) {
