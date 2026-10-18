@@ -1,6 +1,8 @@
 package org.example.service;
 
 import org.example.dto.ContactRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -8,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ContactService {
+
+    private static final Logger log = LoggerFactory.getLogger(ContactService.class);
 
     private final JavaMailSender javaMailSender;
 
@@ -22,6 +26,17 @@ public class ContactService {
     }
 
     public void sendContactMessage(ContactRequest request) {
+        if (fromEmail == null || fromEmail.isBlank()) {
+            log.error("MAIL_USERNAME is not configured in application environment");
+            throw new IllegalStateException("Mail service is not configured: MAIL_USERNAME is missing on the server.");
+        }
+        if (recipientEmail == null || recipientEmail.isBlank()) {
+            log.error("Recipient email is not configured in application environment");
+            throw new IllegalStateException("Mail service is not configured: MAIL_RECIPIENT is missing on the server.");
+        }
+
+        log.info("Sending contact email from {} to {} for subject '{}'", fromEmail, recipientEmail, request.getSubject());
+
         SimpleMailMessage message = new SimpleMailMessage();
 
         // From MUST be set and match the authenticated Gmail username for Gmail SMTP
@@ -46,5 +61,6 @@ public class ContactService {
         );
 
         javaMailSender.send(message);
+        log.info("Contact email successfully dispatched to {}", recipientEmail);
     }
 }

@@ -196,6 +196,7 @@ Open `http://localhost:3000` in your web browser.
    ```env
    MAIL_USERNAME=your-email@gmail.com
    MAIL_PASSWORD=your-google-app-password
+   MAIL_RECIPIENT=your-email@gmail.com
    ```
 
 3. Build and launch the Spring Boot application:
@@ -219,7 +220,7 @@ cd backend
 mvn test
 ```
 
-> 33 tests verifying LeetCode GraphQL parser, Codeforces API, CodeChef scraper, HackerRank history extractor, and rate limiters.
+> 41 tests verifying LeetCode GraphQL parser, Codeforces API, CodeChef scraper, HackerRank history extractor, forwarded IP rate limiters, contact email service, and contact controller.
 
 ### Frontend Client Tests (Node.js Test Runner)
 
@@ -310,7 +311,16 @@ gcloud run deploy portfolio-api \
   --source . \
   --platform managed \
   --region asia-south1 \
-  --allow-unauthenticated
+  --allow-unauthenticated \
+  --set-env-vars MAIL_USERNAME="your-email@gmail.com",MAIL_PASSWORD="your-google-app-password",MAIL_RECIPIENT="your-email@gmail.com"
+```
+
+Or configure environment variables on an existing service:
+
+```bash
+gcloud run services update portfolio-api \
+  --region asia-south1 \
+  --update-env-vars MAIL_USERNAME="your-email@gmail.com",MAIL_PASSWORD="your-google-app-password",MAIL_RECIPIENT="your-email@gmail.com"
 ```
 
 ---
