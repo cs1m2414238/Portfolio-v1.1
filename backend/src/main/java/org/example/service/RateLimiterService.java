@@ -16,7 +16,6 @@ import java.util.concurrent.ConcurrentHashMap;
 @Service
 public class RateLimiterService {
 
-    // 
     private static final int MAX_REQUESTS = 2;
 
     private static final ZoneId ZONE = ZoneId.of("Asia/Kolkata");
@@ -43,10 +42,10 @@ public class RateLimiterService {
                     new DailyCount(today,previous.count+1);
         });
     }
-    // for failed attempt
+
+    // Refund an attempt if a downstream operation fails
     public void refund(String clientIp){
         LocalDate today  = LocalDate.now(ZONE);
-//         we can write the clientIp is similar to ip  means variables can be same
 
         requests.computeIfPresent(clientIp, (ip, previous) -> {
 

@@ -3,9 +3,11 @@ package org.example.service;
 import org.example.model.CodingProfile;
 import org.example.model.Metric;
 import org.example.model.Platform;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.Duration;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -14,7 +16,14 @@ import java.util.Set;
 @Service
 public class CodeforcesService {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
+
+    public CodeforcesService(RestTemplateBuilder builder) {
+        this.restTemplate = builder
+                .connectTimeout(Duration.ofSeconds(3))
+                .readTimeout(Duration.ofSeconds(5))
+                .build();
+    }
 
     public CodingProfile getProfile() {
         String handle = "Unexpectedpriyanshu";
@@ -22,18 +31,12 @@ public class CodeforcesService {
 
         String userUrl = "https://codeforces.com/api/user.info?handles=" + handle;
         Map<String, Object> response = restTemplate.getForObject(userUrl, Map.class);
-//        System.out.println("CODEFORCES RESPONSE = " + response);
 
         if (response == null || !"OK".equals(response.get("status"))) {
             throw new RuntimeException("Failed to fetch Codeforces profile");
         }
 
-        // if we doo like this Object rawResult = response.get("result");
-        // then if we try to get rawResult.get(0);  gives compile error because it doesnt konw what type of
-        // object it is ,so
-        //
-        // type cast  raw object into list
-        //
+        // Cast the raw API result into a list of user objects
         List<Map<String, Object>> result = (List<Map<String, Object>>) response.get("result");
         if (result == null || result.isEmpty()) {
             throw new RuntimeException("No Codeforces user data returned");

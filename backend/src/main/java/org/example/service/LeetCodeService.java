@@ -3,11 +3,15 @@ package org.example.service;
 import org.example.model.CodingProfile;
 import org.example.model.Metric;
 import org.example.model.Platform;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.text.NumberFormat;
+import java.time.Duration;
 import java.util.*;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
@@ -15,7 +19,15 @@ import static org.springframework.http.MediaType.APPLICATION_JSON;
 @Service
 public class LeetCodeService {
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private static final Logger log = LoggerFactory.getLogger(LeetCodeService.class);
+    private final RestTemplate restTemplate;
+
+    public LeetCodeService(RestTemplateBuilder builder) {
+        this.restTemplate = builder
+                .connectTimeout(Duration.ofSeconds(3))
+                .readTimeout(Duration.ofSeconds(5))
+                .build();
+    }
 
     public CodingProfile getProfile() {
 
@@ -29,6 +41,10 @@ public class LeetCodeService {
                 matchedUser(username: $username) {
 
                     username
+
+                    userCalendar {
+                        streak
+                    }
 
                     submitStats: submitStatsGlobal {
                         acSubmissionNum {
@@ -44,6 +60,9 @@ public class LeetCodeService {
                     rating
                     globalRanking
                     topPercentage
+                    badge {
+                        name
+                    }
                 }
             }
         """;
@@ -77,7 +96,7 @@ public class LeetCodeService {
 
         Map<String, Object> responseBody = response.getBody();
 
-        System.out.println("LEETCODE RESPONSE = " + responseBody);
+        log.debug("LeetCode raw response: {}", responseBody);
 
         return parseResponse(responseBody, username);
     }
@@ -85,6 +104,9 @@ public class LeetCodeService {
     private CodingProfile parseResponse(Map<String, Object> responseBody, String username) {
         if (responseBody == null || !responseBody.containsKey("data")) {
             throw new RuntimeException("Empty or invalid LeetCode response");
+        }
+        if (responseBody.get("errors") instanceof List<?> errors && !errors.isEmpty()) {
+            throw new IllegalStateException("LeetCode GraphQL errors: " + errors);
         }
 
         Map<String, Object> data = (Map<String, Object>) responseBody.get("data");
@@ -95,7 +117,7 @@ public class LeetCodeService {
         Map<String, Object> matchedUser = (Map<String, Object>) data.get("matchedUser");
         Map<String, Object> submitStats = (Map<String, Object>) matchedUser.get("submitStats");
 
-        int totalSolved = 0;
+        Integer totalSolved = null;
         int easySolved = 0;
         int mediumSolved = 0;
         int hardSolved = 0;
@@ -104,7 +126,8 @@ public class LeetCodeService {
             for (Object itemObj : acList) {
                 if (itemObj instanceof Map<?, ?> item) {
                     String diff = String.valueOf(item.get("difficulty"));
-                    int count = item.get("count") instanceof Number n ? n.intValue() : 0;
+                    if (!(item.get("count") instanceof Number n) || n.intValue() < 0) continue;
+                    int count = n.intValue();
                     if ("All".equalsIgnoreCase(diff)) totalSolved = count;
                     else if ("Easy".equalsIgnoreCase(diff)) easySolved = count;
                     else if ("Medium".equalsIgnoreCase(diff)) mediumSolved = count;
@@ -113,29 +136,50 @@ public class LeetCodeService {
             }
         }
 
+        if (totalSolved == null) {
+            throw new IllegalStateException("LeetCode response is missing the total solved count");
+        }
+
         Map<String, Object> contest = (Map<String, Object>) data.get("userContestRanking");
-        String ratingStr = "-";
+        String ratingStr = "Unrated";
         String rankStr = "-";
-        String badge = "Knight";
-        Integer streak = 41;
+        String badge = null;
+        Integer streak = null;
+        int contests = 0;
+        String globalRank = "-";
+
+        if (matchedUser.get("userCalendar") instanceof Map<?, ?> calendar
+                && calendar.get("streak") instanceof Number days && days.intValue() >= 0) {
+            streak = days.intValue();
+        }
 
         NumberFormat numFmt = NumberFormat.getIntegerInstance(Locale.US);
 
         if (contest != null) {
+            if (contest.get("attendedContestsCount") instanceof Number attended && attended.intValue() >= 0) {
+                contests = attended.intValue();
+            }
             if (contest.get("rating") instanceof Number r) {
                 ratingStr = numFmt.format(Math.round(r.doubleValue()));
             }
             if (contest.get("topPercentage") instanceof Number tp) {
-                rankStr = String.format(Locale.US, "Top %.1f%%", tp.doubleValue());
-            } else if (contest.get("globalRanking") instanceof Number gr) {
-                rankStr = "#" + numFmt.format(gr.longValue());
+                rankStr = String.format(Locale.US, "Top %.2f%%", tp.doubleValue());
+            }
+            if (contest.get("globalRanking") instanceof Number gr) {
+                globalRank = "#" + numFmt.format(gr.longValue());
+                if ("-".equals(rankStr)) rankStr = globalRank;
+            }
+            if (contest.get("badge") instanceof Map<?, ?> earnedBadge && earnedBadge.get("name") instanceof String name) {
+                badge = name;
             }
         }
 
         List<Metric> metrics = new ArrayList<>();
         metrics.add(new Metric("Problems Solved", String.valueOf(totalSolved), "Easy: " + easySolved + " | Med: " + mediumSolved + " | Hard: " + hardSolved));
         metrics.add(new Metric("Contest Rating", ratingStr, rankStr));
-        metrics.add(new Metric("Streak", streak != null ? streak.toString() : "41", "Days Active"));
+        metrics.add(new Metric("Contests", Integer.toString(contests), "Rated Contests Attended"));
+        metrics.add(new Metric("Global Rank", globalRank, "Contest Global Rank"));
+        metrics.add(new Metric("Max Streak", streak != null ? streak.toString() : "-", "Days"));
 
         return CodingProfile.builder()
                 .platform(Platform.LEETCODE)

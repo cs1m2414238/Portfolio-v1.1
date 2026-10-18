@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalSolved = 387;
   let activeHoverKey = null;
 
-  // ----------------------------------------------------
-  // HTML Templates (All unified in 3-column card format)
-  // ----------------------------------------------------
+
+  // HTML templates for platform stat cards
+
 
   const leetcodeTemplate = `
     <!-- Main Content Layout with 3 columns matching screenshot -->
@@ -573,9 +573,9 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
   `;
 
-  // ----------------------------------------------------
-  // Platform Profile Link Metadata
-  // ----------------------------------------------------
+
+  // Profile links metadata
+
 
   const platformLinks = {
     leetcode: {
@@ -583,7 +583,7 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "View LeetCode Profile"
     },
     geeksforgeeks: {
-      url: "https://www.geeksforgeeks.org/user/cs1m2414238/",
+      url: "https://www.geeksforgeeks.org/profile/2k24cs1mvgrc",
       label: "View GeeksforGeeks Profile"
     },
     codeforces: {
@@ -591,18 +591,18 @@ document.addEventListener("DOMContentLoaded", () => {
       label: "View Codeforces Profile"
     },
     codechef: {
-      url: "https://www.codechef.com/users/cs1m2414238",
+      url: "https://www.codechef.com/users/unexpected628",
       label: "View CodeChef Profile"
     },
     hackerrank: {
-      url: "https://www.hackerrank.com/cs1m2414238",
+      url: "https://www.hackerrank.com/profile/cs1m_2414238",
       label: "View HackerRank Profile"
     }
   };
 
-  // ----------------------------------------------------
-  // DOM Elements Setup & Bindings
-  // ----------------------------------------------------
+
+  // DOM elements setup and event bindings
+
 
   function setupDOMElements() {
     tealCir = document.getElementById("easycircle");
@@ -762,9 +762,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ----------------------------------------------------
-  // Dynamic Content Swapper
-  // ----------------------------------------------------
+
+  // Switch visible platform dashboard
+
 
   function updatePlatform(key) {
     const container = document.getElementById("stats-tab-content");

@@ -1,6 +1,4 @@
-/* ==========================================================================
-   CODING PROFILES SECTION - MATCHING SCREENSHOT SPEC
-   ========================================================================== */
+/* Coding profiles section */
 
 #stats-panel-section {
   padding: clamp(3rem, 5vw, 5rem) clamp(1.2rem, 5vw, 2.5rem);
@@ -475,9 +473,7 @@ body[data-theme="dawn"] .view-all-profiles-link:hover {
   transform: translate(2px, -2px);
 }
 
-/* ==========================================================================
-   DAWN (LIGHT) THEME SUPPORT
-   ========================================================================== */
+/* Light theme overrides */
 body[data-theme="dawn"] .coding-profile-card {
   background: rgba(255, 255, 255, 0.78);
   border-color: rgba(15, 23, 42, 0.09);
@@ -1146,9 +1142,7 @@ body[data-theme="dawn"] .stats-card .cell-0 {
 .stats-card .cell-3 { background-color: rgba(34, 197, 94, 0.65); }
 .stats-card .cell-4 { background-color: rgba(34, 197, 94, 0.95); box-shadow: 0 0 6px rgba(34, 197, 94, 0.4); }
 
-/* =========================
-   LEETCODE BADGES STYLING
-   ========================= */
+/* LeetCode badges */
 .stats-card .badges-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1255,9 +1249,7 @@ body[data-theme="dawn"] .stats-card .badge-streak:hover {
   line-height: 1.3;
 }
 
-/* =======================================
-   LEETCODE CIRCULAR PROGRESS DISPLAY
-   ======================================= */
+/* LeetCode circular progress */
 .stats-card .solve-rate-container {
   display: flex;
   align-items: center;
@@ -1453,9 +1445,7 @@ body[data-theme="dawn"] .stats-card .diff-card-item:hover {
   font-weight: 500;
 }
 
-/* =======================================
-   HACKERRANK MATRIX & DASHBOARD LAYOUT
-   ======================================= */
+/* HackerRank matrix and dashboard layout */
 .hackerrank-matrix-container {
   display: flex;
   flex-direction: column;
@@ -1721,9 +1711,7 @@ body[data-theme="dawn"] .hackerrank-right-content .breakdown-track {
   margin-bottom: clamp(2.2rem, 3.8vw, 3.2rem);
 }
 
-/* =======================================
-   HACKERRANK MY BADGES STYLING (HEXAGONS)
-   ======================================= */
+/* HackerRank badge hexagons */
 .stats-card .hackerrank-badges-section {
   width: 100%;
   margin-top: 24px;

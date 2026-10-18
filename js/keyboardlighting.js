@@ -48,7 +48,7 @@ function runBootAnimation() {
       gsap.set(".skill-board", { clearProps: "transform" });
 
 
-      //  adding hyoer link to github icon
+      // Open GitHub profile when clicking the GitHub key icon
       
       const gitbtn = document.querySelector(".key i.fa-github");
       if(gitbtn){

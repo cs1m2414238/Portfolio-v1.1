@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/statpannel.css">
   <link rel="stylesheet" href="./css/terminal.css">
-  <!-- <link rel="stylesheet" href="./css/welcome.css"> -->
+  <link rel="stylesheet" href="./css/non-hero-compact.css">
+  <link rel="stylesheet" href="./css/welcome.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +19,18 @@
 </head>
 
 <body data-theme="night">
-  <!-- <div class="loading">
+  <script>
+    // Restore the selected theme before the welcome screen is painted.
+    try {
+      const savedTheme = localStorage.getItem("portfolio:theme");
+      if (savedTheme === "night" || savedTheme === "dawn") {
+        document.body.dataset.theme = savedTheme;
+      }
+    } catch {
+      // Keep the default theme when browser storage is unavailable.
+    }
+  </script>
+  <div class="loading">
     <div class="text">
       <div class="welcome-text">
         <div class="dot"></div>
@@ -56,7 +68,7 @@
     <div class="loading-round">
       <div class="curve"></div>
     </div>
-  </div> -->
+  </div>
 
   <div class="progress-track" aria-hidden="true">
     <div class="progress-bar" id="progress-bar"></div>
@@ -78,8 +90,6 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#github">GitHub</a>
-      <a href="#journey">Journey</a>
       <a href="#contact">Contact</a>
     </nav>
 
@@ -101,13 +111,19 @@
     <section class="hero section" id="home">
       <div class="hero-copy reveal">
         <p class="eyebrow">Hi, I am</p>
-        <h1><span id="typing">Priyanshu Sharma</span></h1>
+        <h1>
+          <span class="hero-title-text"><span id="typing">Priyanshu Sharma</span></span>
+          <span class="hero-title-space" aria-hidden="true">
+            <span>Full Stack Developer</span>
+            <span>AI/ML Engineer</span>
+          </span>
+        </h1>
         <p class="hero-role">Software Engineer • AI/ML • Agentic Systems</p>
 
         <div class="hero-buttons-grid">
           <a class="primary-button" href="#projects">Explore Work</a>
           <a class="secondary-button" href="#contact">Hire Me</a>
-          <a class="secondary-button resume-btn" href="assets/Priyanshu_Sharma_Resume.pdf" download="Priyanshu_Sharma_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
+          <a class="secondary-button resume-btn" href="assets/Priyanshu_Sharma_Resume.pdf?v=2" download="Priyanshu_Sharma_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Download Resume">
             <i class="fa-solid fa-cloud-arrow-down"></i> Download Resume
           </a>
         </div>
@@ -130,41 +146,55 @@
                   class="key-legend-qwerty">HTML</span></div>
               <div class="key blue" style="--rise: -0.15rem;"><i class="fa-brands fa-python"
                   aria-label="PYTHON"></i><span class="key-legend-qwerty">PYTHON</span></div>
-              <div class="key teal" style="--rise: 0.2rem;"><i class="fa-solid fa-brain" aria-label="AI"></i><span
-                  class="key-legend-qwerty">AI</span></div>
+              <div class="key teal" style="--rise: 0.2rem;"><i class="fa-solid fa-brain" aria-label="AI/ML"></i><span
+                  class="key-legend-qwerty">AI/ML</span></div>
 
-              <div class="key slate" style="--rise: -0.1rem;"><i class="fa-solid fa-database" aria-label="SQL"></i><span
-                  class="key-legend-qwerty">SQL</span></div>
+              <div class="key slate" style="--rise: -0.1rem;"><i class="fa-solid fa-database" aria-label="PostgreSQL"></i><span
+                  class="key-legend-qwerty key-legend-long">POSTGRESQL</span></div>
               <div class="key cyan" style="--rise: 0.15rem;"><i class="fa-brands fa-css3-alt" aria-label="CSS"></i><span
                   class="key-legend-qwerty">CSS</span></div>
-              <div class="key amber" style="--rise: -0.2rem;"><i class="fa-brands fa-js" aria-label="JS"></i><span
-                  class="key-legend-qwerty">JS</span></div>
-              <div class="key graphite" style="--rise: 0.2rem;"><i class="fa-solid fa-bezier-curve"
-                  aria-label="UX"></i><span class="key-legend-qwerty">UX</span></div>
-              <div class="key gold" style="--rise: -0.1rem;"><i class="fa-solid fa-gears" aria-label="RESTful"></i><span
-                  class="key-legend-qwerty">RESTful</span></div>
+              <div class="key amber" style="--rise: -0.2rem;"><i class="fa-brands fa-js" aria-label="JavaScript"></i><span
+                  class="key-legend-qwerty key-legend-long">JAVASCRIPT</span></div>
+              <div class="key blue" style="--rise: 0.2rem;"><i class="key-typescript" aria-label="TypeScript">TS</i><span
+                  class="key-legend-qwerty key-legend-long">TYPESCRIPT</span></div>
+              <div class="key gold" style="--rise: -0.1rem;"><i class="fa-solid fa-gears" aria-label="REST API"></i><span
+                  class="key-legend-qwerty">REST API</span></div>
 
               <div class="key coral" style="--rise: 0.2rem;"><i class="fa-brands fa-git-alt" aria-label="Git"></i><span
-                  class="key-legend-qwerty">Git</span></div>
-              <div class="key slate" style="--rise: -0.15rem;"><i class="fa-brands fa-github" aria-label="GH"></i><span
-                  class="key-legend-qwerty">GitHub</span></div>
-              <div class="key deep" style="--rise: 0.25rem; cursor: pointer;" onclick="openPopup()"><i class="fa-solid fa-terminal" aria-label="CMD"></i><span
-                  class="key-legend-qwerty">Terminal</span></div>
-              <div class="key blue" style="--rise: -0.1rem;"><i class="fa-brands fa-react" aria-label="NEXT"></i><span
-                  class="key-legend-qwerty">React</span></div>
-              <div class="key green" style="--rise: 0.15rem;"><i class="fa-solid fa-leaf" aria-label="Spring"></i><span
-                  class="key-legend-qwerty">Spring</span></div>
+                  class="key-legend-qwerty">GIT</span></div>
+              <div class="key slate" style="--rise: -0.15rem;"><i class="fa-brands fa-github" aria-label="GitHub"></i><span
+                  class="key-legend-qwerty">GITHUB</span></div>
+              <div class="key deep" style="--rise: 0.25rem; cursor: pointer;" onclick="openPopup()"><i class="fa-solid fa-terminal" aria-label="Terminal"></i><span
+                  class="key-legend-qwerty">TERMINAL</span></div>
+              <div class="key blue" style="--rise: -0.1rem;"><i class="fa-brands fa-react" aria-label="React"></i><span
+                  class="key-legend-qwerty">REACT</span></div>
+              <div class="key green" style="--rise: 0.15rem;"><i class="fa-solid fa-leaf" aria-label="Spring Boot"></i><span
+                  class="key-legend-qwerty key-legend-long">SPRING BOOT</span></div>
 
-              <div class="key white" style="--rise: -0.05rem;"><i class="fa-brands fa-linux"
-                  aria-label="LINUX"></i><span class="key-legend-qwerty">Linux</span></div>
+              <div class="key graphql-key" style="--rise: -0.05rem;"><i class="key-vector-icon" aria-label="GraphQL">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.35" aria-hidden="true">
+                    <path d="m12 2 8.66 5v10L12 22l-8.66-5V7Zm0 0 8.66 15H3.34Z" />
+                    <g fill="currentColor" stroke="none">
+                      <circle cx="12" cy="2" r="1.8" /><circle cx="20.66" cy="7" r="1.8" /><circle cx="20.66" cy="17" r="1.8" />
+                      <circle cx="12" cy="22" r="1.8" /><circle cx="3.34" cy="17" r="1.8" /><circle cx="3.34" cy="7" r="1.8" />
+                    </g>
+                  </svg>
+                </i><span class="key-legend-qwerty">GRAPHQL</span></div>
               <div class="key aqua" style="--rise: 0.12rem;"><i class="fa-brands fa-docker"
-                  aria-label="DOCKER"></i><span class="key-legend-qwerty">Docker</span></div>
-              <div class="key lime" style="--rise: -0.12rem;"><i class="fa-brands fa-npm" aria-label="NPM"></i><span
-                  class="key-legend-qwerty">NPM</span></div>
+                  aria-label="DOCKER"></i><span class="key-legend-qwerty">DOCKER</span></div>
+              <div class="key coral" style="--rise: -0.12rem;"><i class="fa-solid fa-feather" aria-label="Maven"></i><span
+                  class="key-legend-qwerty">MAVEN</span></div>
               <div class="key amber" style="--rise: 0.18rem;"><i class="fa-brands fa-aws" aria-label="AWS"></i><span
                   class="key-legend-qwerty">AWS</span></div>
-              <div class="key slate" style="--rise: -0.12rem;"><i class="fa-solid fa-chart-line"
-                  aria-label="SEO"></i><span class="key-legend-qwerty">SEO</span></div>
+              <div class="key blue" style="--rise: -0.12rem;"><i class="key-vector-icon" aria-label="Google Cloud Platform">
+                  <svg viewBox="0 0 64 64" aria-hidden="true">
+                    <path fill="#0073b9" d="M18 6h28l7 12H25l-7 12-7-12Z" />
+                    <path fill="#f8b900" d="m11 18 7 12 7 12h14l-7 12H18L4 30Z" />
+                    <path fill="#e83e33" d="M39 18h14l7 12-14 24H32l14-24Z" />
+                    <path fill="#d8dadd" d="M25 18h14l7 12-7 12H25l-7-12Z" />
+                    <circle cx="32" cy="30" r="8" fill="#f7f7f7" />
+                  </svg>
+                </i><span class="key-legend-qwerty">GCP</span></div>
             </div>
           </div>
         </div>
@@ -172,37 +202,40 @@
     </section>
 
 
-        <!-- ========================= 2. ABOUT SECTION ========================= -->
+    <!-- About section -->
     <section class="section" id="about">
       <div class="section-heading reveal">
         <h2>About Me</h2>
       </div>
       <div class="about-grid">
         <article class="glass-card personal-story-card reveal">
-          <p class="card-label">Hello Folks <span class="waving-hand">👋😊</span></p>
-          <div class="story-paragraphs" style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 1.1rem; line-height: 1.8; text-align: left;">
-            <p>I'm <strong>Priyanshu Sharma</strong>, a passionate Software Developer currently pursuing my Bachelor of Technology (B.Tech) in Computer Science and Engineering.</p>
-            <p>I have a strong interest in Backend Development and problem-solving, with hands-on experience in Java, Spring Boot, MySQL, and RESTful APIs. I enjoy designing and developing scalable applications that solve real-world challenges while following industry best practices.</p>
-            <p>Alongside backend development, I actively strengthen my Data Structures & Algorithms skills and work on projects that enhance my understanding of software engineering, system design, and modern development tools.</p>
-            <p>I am continuously learning, building, and exploring new technologies with the goal of becoming a skilled Software Engineer and contributing to impactful products and innovative solutions.</p>
+          <div class="story-paragraphs">
+            <p>I’m a pre-final-year B.Tech Computer Science student at PSIT Kanpur, graduating in 2028. My focus is on backend engineering, full-stack development, and applied AI/ML.</p>
+            <p>My work primarily involves Java, Spring Boot, React, and PostgreSQL. I build APIs and full-stack applications, explore agentic systems, and develop machine learning pipelines for real-world problems.</p>
+            <p>I’m currently looking for software engineering internships where I can contribute to real products, collaborate with engineering teams, and deepen my skills in building reliable, useful software.</p>
+          </div>
+          <div class="about-details">
+            <div class="about-education" role="group" aria-labelledby="about-education-heading">
+              <h3 class="about-detail-label" id="about-education-heading">Education</h3>
+              <p class="education-details"><strong>PSIT Kanpur</strong><br><span>B.Tech CSE</span> · <span>2024–2028</span></p>
+            </div>
           </div>
         </article>
       </div>
     </section>
 
-
-    <!--  2. STACK TREE ========================= -->
+    <!-- Technical skills -->
     <section class="learning-stacktree section" id="skills">
       <div class="section-heading reveal">
       
-        <h2>Full Stack Dev</h2>
+        <h2>Technical Skills</h2>
       </div>
 
       <!-- Stack Tree Diagram -->
       <div class="stack-tree reveal">
         <!-- Root Node -->
         <div class="stack-root">
-          <span>FULL STACK DEV</span>
+          <span>FSD + AI/ML</span>
         </div>
         <!-- Connector line from root down -->
         <div class="stack-root-line"></div>
@@ -270,19 +303,20 @@
               <span class="tech-chip"><i class="fa-brands fa-aws"></i> AWS</span>
             </div>
           </div>
-          <!-- Tools -->
-          <div class="stack-col">
+          <!-- AI / Machine Learning -->
+          <div class="stack-col stack-col-ai">
             <div class="stack-col-line"></div>
             <div class="stack-category-node">
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <span>TOOLS</span>
+              <i class="fa-solid fa-brain"></i>
+              <span>AI / ML</span>
             </div>
             <i class="fa-solid fa-chevron-down stack-chevron"></i>
             <div class="stack-tech-chips">
-              <span class="tech-chip"><i class="fa-solid fa-code"></i> VS Code/ IntelliJ IDEA</span>
-              <span class="tech-chip"><i class="fa-solid fa-chart-pie"></i> Tableau</span>
-              <span class="tech-chip"><i class="fa-solid fa-chart-simple"></i> Power BI</span>
-              <span class="tech-chip"><i class="fa-solid fa-terminal"></i> Terminal</span>
+              <span class="tech-chip"><i class="fa-solid fa-fire"></i> PyTorch</span>
+              <span class="tech-chip"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
+              <span class="tech-chip"><i class="fa-brands fa-python"></i> Pandas / NumPy</span>
+              <span class="tech-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini AI</span>
+              <span class="tech-chip"><i class="fa-solid fa-microchip"></i> Google ADK</span>
             </div>
           </div>
         </div>
@@ -290,16 +324,154 @@
     </section>
 
 
-    <!-- -------------------------- 3. Problem Solving / Coding Profiles section ----------------- -->
-    <section class="section" id="stats-panel-section">
+    <!-- Featured projects -->
+    <section class="section projects-section" id="projects">
       <div class="section-heading reveal">
-        <h2>Coding Profiles</h2>
-        <span class="section-badge" id="graphql-status" style="display: none;"><span class="sync-dot"></span> <span id="graphql-status-text">GraphQL Live</span></span>
+
+        <h2>Featured Projects</h2>
       </div>
 
-      <!-- 5-Cards Grid matching screenshot -->
+      <div class="projects-showcase-grid">
+        <!-- Flagship project: Vidyut -->
+        <article class="project-hero-card glass-card reveal vidyut-project">
+          <div class="project-hero-content">
+            <div class="project-badge-row">
+              <span class="project-flagship-pill"><i class="fa-solid fa-bolt"></i> Agentic EV Platform</span>
+              <span class="project-type-pill project-startup-pill">Startup</span>
+            </div>
+            <div class="project-title-group">
+              <h3 class="project-title">VIDYUT</h3>
+              <p class="project-tagline">Agentic EV Charging &amp; Journey Planning Platform</p>
+            </div>
+            <p class="project-description">
+              An AI-powered EV charging platform that plans long-distance journeys, selects compatible charging stations using battery, availability, pricing and route constraints, and automatically reroutes when a planned charger becomes unavailable.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-java"></i> Spring Boot</span>
+              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
+              <span class="tech-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="tech-tag"><i class="fa-solid fa-brain"></i> Gemini</span>
+              <span class="tech-tag"><i class="fa-solid fa-microchip"></i> Google ADK</span>
+              <span class="tech-tag"><i class="fa-brands fa-google"></i> GCP</span>
+              <span class="tech-tag"><i class="fa-brands fa-docker"></i> Docker</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://vidyut1-1.web.app/" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Try Vidyut live prototype (opens in a new tab)">
+                Try Vidyut <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+              </a>
+              <a href="https://github.com/cs1m2414238/vidyut-1.1" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Vidyut Repository">
+                <i class="fa-brands fa-github"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="project-hero-visual">
+            <figure class="vidyut-preview">
+              <div class="vidyut-preview-bar">
+                <img src="assets/vidyut-logo.svg" alt="" width="20" height="20" aria-hidden="true" />
+                <span>Charger discovery</span>
+              </div>
+              <img class="vidyut-preview-image" src="assets/vidyut-charger-preview.jpg" width="980" height="580" loading="lazy" decoding="async" alt="Vidyut prototype showing a charger map, station availability, CCS2 compatibility and per-kWh pricing." aria-describedby="vidyut-preview-caption" />
+              <figcaption class="vidyut-preview-caption" id="vidyut-preview-caption">
+                <span>Actual prototype screen · Demo station data</span>
+                <span>Map © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors</span>
+              </figcaption>
+            </figure>
+          </div>
+        </article>
+
+        <!-- Secondary projects row -->
+        <div class="projects-subgrid">
+          <!-- Urban Heat Mitigation -->
+          <article class="project-card glass-card reveal urban-heat-project">
+            <div class="project-card-header">
+              <h3 class="project-title">Urban Heat Mitigation</h3>
+              <p class="project-tagline">Geospatial AI / ML</p>
+            </div>
+            <p class="project-description">
+              Multi-city geospatial ML system for identifying urban heat hotspots and evaluating mitigation interventions.
+            </p>
+            <p class="project-evidence">
+              <span><strong>70K+</strong> observations</span>
+              <span aria-hidden="true">·</span>
+              <span>Baseline R² <strong>0.89</strong></span>
+              <span aria-hidden="true">·</span>
+              <span>Spatial CV R² <strong>≈0.79</strong></span>
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-chart-line" aria-hidden="true"></i> XGBoost</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/urban_heat_mitigation" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Urban Heat GitHub repository (opens in a new tab)">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Text Pro Editor -->
+          <article class="project-card glass-card reveal">
+            <div class="project-card-header">
+              <h3 class="project-title">Text Pro Editor</h3>
+              <p class="project-tagline">High-Performance Text Processing &amp; IDE Suite</p>
+            </div>
+            <p class="project-description">
+              Lightweight, high-performance Java text editor with regex search analytics, syntax highlighting, multi-file I/O buffer management, and modular architecture.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-java"></i> Java 17</span>
+              <span class="tech-tag"><i class="fa-solid fa-code"></i> JavaFX / Swing</span>
+              <span class="tech-tag"><i class="fa-solid fa-magnifying-glass"></i> Regex Engine</span>
+              <span class="tech-tag"><i class="fa-solid fa-file-code"></i> File I/O</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/Text-Pro" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Text Pro GitHub repository (opens in a new tab)">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- Amazon ML Challenge -->
+          <article class="project-card glass-card reveal">
+            <div class="project-card-header">
+              <h3 class="project-title">Amazon ML Challenge</h3>
+              <p class="project-tagline">Multimodal Feature Extraction &amp; Predictive Pipeline</p>
+            </div>
+            <p class="project-description">
+              High-throughput ML pipeline designed for the national challenge, featuring automated text/image multimodal feature extraction, dimensionality reduction, and ensemble gradient boosting.
+            </p>
+            <div class="project-tech-stack">
+              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
+              <span class="tech-tag"><i class="fa-solid fa-brain"></i> PyTorch</span>
+              <span class="tech-tag"><i class="fa-solid fa-chart-line"></i> LightGBM</span>
+              <span class="tech-tag"><i class="fa-solid fa-table"></i> Pandas / NumPy</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/cs1m2414238/amazonML" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Amazon ML GitHub repository (opens in a new tab)">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coding profiles -->
+    <section class="section" id="stats-panel-section">
+      <div class="section-heading coding-profiles-heading reveal">
+        <h2>Coding Profiles</h2>
+        <button class="profiles-refresh-button" id="coding-profiles-refresh" type="button" aria-label="Refresh coding profiles" title="Refresh coding profiles">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 7v5h-5M4 17v-5h5" />
+            <path d="M6.1 7a7 7 0 0 1 11.5-1L20 9M4 15l2.4 3A7 7 0 0 0 17.9 17" />
+          </svg>
+        </button>
+        <span class="profiles-refresh-announcement" id="coding-profiles-refresh-status" role="status" aria-live="polite"></span>
+      </div>
+
+      <!-- Competitive programming platform cards -->
       <div class="coding-profiles-cards-grid reveal">
-        <!-- 1. LeetCode Card -->
+        <!-- LeetCode -->
         <article class="coding-profile-card" data-platform="leetcode">
           <div class="card-top">
             <div class="platform-brand">
@@ -322,21 +494,21 @@
             </div>
 
             <div class="metric-block">
-              <div class="metric-val" id="leetcode-rating">1,481</div>
+              <div class="metric-val" id="leetcode-rating">-</div>
               <div class="metric-lbl">Contest Rating</div>
             </div>
 
             <div class="card-meta-row">
               <div class="meta-item">
-                <i class="fa-solid fa-chess-knight meta-icon knight-icon"></i>
+                <i class="fa-solid fa-trophy meta-icon knight-icon"></i>
                 <div class="meta-texts">
-                  <span class="meta-bold">Knight</span>
-                  <span class="meta-sub">Top 50.8%</span>
+                  <span class="meta-bold">-</span>
+                  <span class="meta-sub">-</span>
                 </div>
               </div>
               <div class="meta-item text-right">
-                <span class="meta-bold">41</span>
-                <span class="meta-sub">Streak (Days)</span>
+                <span class="meta-bold">-</span>
+                <span class="meta-sub">Max Streak</span>
               </div>
             </div>
           </div>
@@ -347,7 +519,7 @@
           </a>
         </article>
 
-        <!-- 2. GeeksforGeeks Card -->
+        <!-- GeeksforGeeks -->
         <article class="coding-profile-card" data-platform="geeksforgeeks">
           <div class="card-top">
             <div class="platform-brand">
@@ -358,44 +530,44 @@
               </div>
               <span class="platform-name">GeeksforGeeks</span>
             </div>
-            <a href="https://www.geeksforgeeks.org/user/cs1m2414238/" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open GeeksforGeeks Profile">
+            <a href="https://www.geeksforgeeks.org/profile/2k24cs1mvgrc?tab=activity" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open GeeksforGeeks Activity">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
 
           <div class="card-body">
             <div class="metric-block">
-              <div class="metric-val" id="gfg-solved">4</div>
+              <div class="metric-val" id="gfg-solved">-</div>
               <div class="metric-lbl">Problems Solved</div>
             </div>
 
             <div class="metric-block">
-              <div class="metric-val" id="gfg-rank">Rank 821</div>
-              <div class="metric-lbl">Institute Rank &raquo;</div>
+              <div class="metric-val" id="gfg-score">-</div>
+              <div class="metric-lbl">Coding Score</div>
             </div>
 
             <div class="card-meta-row">
               <div class="meta-item">
                 <i class="fa-solid fa-fire meta-icon flame-icon"></i>
                 <div class="meta-texts">
-                  <span class="meta-bold">1 Day</span>
+                  <span class="meta-bold">-</span>
                   <span class="meta-sub">POTD Streak</span>
                 </div>
               </div>
               <div class="meta-item text-right">
-                <span class="meta-bold">10</span>
-                <span class="meta-sub">Coding Score</span>
+                <span class="meta-bold">-</span>
+                <span class="meta-sub">Institute Rank</span>
               </div>
             </div>
           </div>
 
-          <a href="https://www.geeksforgeeks.org/user/cs1m2414238/" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+          <a href="https://www.geeksforgeeks.org/profile/2k24cs1mvgrc" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
             <span>View Profile</span>
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </article>
 
-        <!-- 3. Codeforces Card -->
+        <!-- Codeforces -->
         <article class="coding-profile-card" data-platform="codeforces">
           <div class="card-top">
             <div class="platform-brand">
@@ -445,7 +617,7 @@
           </a>
         </article>
 
-        <!-- 4. CodeChef Card -->
+        <!-- CodeChef -->
         <article class="coding-profile-card" data-platform="codechef">
           <div class="card-top">
             <div class="platform-brand">
@@ -458,7 +630,7 @@
               </div>
               <span class="platform-name">CodeChef</span>
             </div>
-            <a href="https://www.codechef.com/users/cs1m2414238" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open CodeChef Profile">
+            <a href="https://www.codechef.com/users/unexpected628" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open CodeChef Profile">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -489,13 +661,13 @@
             </div>
           </div>
 
-          <a href="https://www.codechef.com/users/cs1m2414238" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+          <a href="https://www.codechef.com/users/unexpected628" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
             <span>View Profile</span>
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
         </article>
 
-        <!-- 5. HackerRank Card -->
+        <!-- HackerRank -->
         <article class="coding-profile-card" data-platform="hackerrank">
           <div class="card-top">
             <div class="platform-brand">
@@ -507,7 +679,7 @@
               </div>
               <span class="platform-name">HackerRank</span>
             </div>
-            <a href="https://www.hackerrank.com/cs1m2414238" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open HackerRank Profile">
+            <a href="https://www.hackerrank.com/profile/cs1m_2414238" target="_blank" rel="noopener noreferrer" class="card-ext-link" title="Open HackerRank Profile">
               <i class="fa-solid fa-arrow-up-right-from-square"></i>
             </a>
           </div>
@@ -520,7 +692,7 @@
 
             <div class="metric-block">
               <div class="metric-val" id="hr-rating">-</div>
-              <div class="metric-lbl">Rating</div>
+              <div class="metric-lbl">Top Badge</div>
             </div>
 
             <div class="card-meta-row">
@@ -533,12 +705,12 @@
               </div>
               <div class="meta-item text-right">
                 <span class="meta-bold">-</span>
-                <span class="meta-sub">Score</span>
+                <span class="meta-sub">Practice Score</span>
               </div>
             </div>
           </div>
 
-          <a href="https://www.hackerrank.com/cs1m2414238" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
+          <a href="https://www.hackerrank.com/profile/cs1m_2414238" target="_blank" rel="noopener noreferrer" class="profile-card-action-btn">
             <span>View Profile</span>
             <i class="fa-solid fa-arrow-up-right-from-square"></i>
           </a>
@@ -547,154 +719,7 @@
     </section>
 
 
-    <!-- ========================= 4. FEATURED PROJECTS SECTION ========================= -->
-    <section class="section projects-section" id="projects">
-      <div class="section-heading reveal">
-        
-        <h2>Featured Projects</h2>
-      </div>
-
-      <div class="projects-showcase-grid">
-        <!-- 1. FLAGSHIP HERO PROJECT: VIDYUT -->
-        <article class="project-hero-card glass-card reveal">
-          <div class="project-hero-content">
-            <div class="project-badge-row">
-              <span class="project-flagship-pill"><i class="fa-solid fa-bolt"></i> Agentic EV Platform</span>
-              <span class="project-type-pill">Startup</span>
-            </div>
-            <div class="project-title-group">
-              <h3 class="project-title">VIDYUT</h3>
-              <p class="project-tagline">Autonomous Agentic EV Charging &amp; Grid Ecosystem</p>
-            </div>
-            <p class="project-description">
-              An AI-powered EV charging ecosystem that autonomously plans long-distance trips, selects compatible charging stations based on live grid telemetry, predicts charger availability, and dynamically reroutes upon station failure with vehicle-linked payments.
-            </p>
-            <div class="project-tech-stack">
-              <span class="tech-tag"><i class="fa-brands fa-java"></i> Spring Boot</span>
-              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
-              <span class="tech-tag"><i class="fa-solid fa-database"></i> PostgreSQL</span>
-              <span class="tech-tag"><i class="fa-solid fa-brain"></i> Gemini AI</span>
-              <span class="tech-tag"><i class="fa-solid fa-microchip"></i> Google ADK</span>
-              <span class="tech-tag"><i class="fa-brands fa-google"></i> GCP</span>
-              <span class="tech-tag"><i class="fa-brands fa-docker"></i> Docker</span>
-            </div>
-            <div class="project-actions">
-              <a href="https://vidyut1-1.web.app/" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Live Demo Vidyut Platform">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
-              </a>
-              <a href="https://github.com/cs1m2414238/vidyut-1.1" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="View Vidyut Repository">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-            </div>
-          </div>
-
-          <div class="project-hero-visual">
-            <div class="hero-brand-showcase">
-              <div class="brand-logo-glow"></div>
-              <div class="hero-brand-logo-wrap">
-                <img src="assets/vidyut-logo.svg" alt="Vidyut Ecosystem Logo" class="hero-brand-logo" />
-              </div>
-              <div class="hero-brand-meta">
-                <span class="hero-brand-name">VIDYUT</span>
-                <span class="hero-brand-tag">Autonomous EV Ecosystem</span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <!-- 2. SECONDARY PROJECTS ROW -->
-        <div class="projects-subgrid">
-          <!-- Urban Heat Island Mitigation -->
-          <article class="project-card glass-card reveal">
-            <div class="project-card-header">
-              <div class="project-badge-row">
-                <span class="project-type-pill">Geospatial / ML</span>
-                <span class="project-year-pill">2026</span>
-              </div>
-              <h3 class="project-title">Urban Heat Island Mitigation</h3>
-              <p class="project-tagline">Satellite Telemetry &amp; Geospatial Simulation</p>
-            </div>
-            <p class="project-description">
-              Geospatial environmental modeling pipeline processing satellite thermal imagery to identify critical urban heat islands and simulate climate-resilient urban cooling infrastructure.
-            </p>
-            <div class="project-tech-stack">
-              <span class="tech-tag"><i class="fa-brands fa-js"></i> TypeScript</span>
-              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="tech-tag"><i class="fa-solid fa-map-location-dot"></i> GIS &amp; GeoJSON</span>
-              <span class="tech-tag"><i class="fa-brands fa-react"></i> React</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/cs1m2414238/urban_heat_mitigation" target="_blank" rel="noopener noreferrer" class="primary-button">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="#contact" class="secondary-button">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Case Study
-              </a>
-            </div>
-          </article>
-
-          <!-- Text Pro Editor -->
-          <article class="project-card glass-card reveal">
-            <div class="project-card-header">
-              <div class="project-badge-row">
-                <span class="project-type-pill">Software Engineering</span>
-                <span class="project-year-pill">Java Desktop</span>
-              </div>
-              <h3 class="project-title">Text Pro Editor</h3>
-              <p class="project-tagline">High-Performance Text Processing &amp; IDE Suite</p>
-            </div>
-            <p class="project-description">
-              Lightweight, high-performance Java text editor with regex search analytics, syntax highlighting, multi-file I/O buffer management, and modular architecture.
-            </p>
-            <div class="project-tech-stack">
-              <span class="tech-tag"><i class="fa-brands fa-java"></i> Java 17</span>
-              <span class="tech-tag"><i class="fa-solid fa-code"></i> JavaFX / Swing</span>
-              <span class="tech-tag"><i class="fa-solid fa-magnifying-glass"></i> Regex Engine</span>
-              <span class="tech-tag"><i class="fa-solid fa-file-code"></i> File I/O</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/cs1m2414238/Text-Pro" target="_blank" rel="noopener noreferrer" class="primary-button">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="https://github.com/cs1m2414238/Text-Pro" target="_blank" rel="noopener noreferrer" class="secondary-button">
-                <i class="fa-solid fa-code-branch"></i> Source Code
-              </a>
-            </div>
-          </article>
-
-          <!-- Amazon ML Challenge -->
-          <article class="project-card glass-card reveal">
-            <div class="project-card-header">
-              <div class="project-badge-row">
-                <span class="project-type-pill">Machine Learning / Data</span>
-                <span class="project-year-pill">Challenge 2026</span>
-              </div>
-              <h3 class="project-title">Amazon ML Challenge</h3>
-              <p class="project-tagline">Multimodal Feature Extraction &amp; Predictive Pipeline</p>
-            </div>
-            <p class="project-description">
-              High-throughput ML pipeline designed for the national challenge, featuring automated text/image multimodal feature extraction, dimensionality reduction, and ensemble gradient boosting.
-            </p>
-            <div class="project-tech-stack">
-              <span class="tech-tag"><i class="fa-brands fa-python"></i> Python</span>
-              <span class="tech-tag"><i class="fa-solid fa-brain"></i> PyTorch</span>
-              <span class="tech-tag"><i class="fa-solid fa-chart-line"></i> XGBoost</span>
-              <span class="tech-tag"><i class="fa-solid fa-table"></i> Pandas / NumPy</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/cs1m2414238/amazonML" target="_blank" rel="noopener noreferrer" class="primary-button" aria-label="Amazon ML GitHub">
-                <i class="fa-brands fa-github"></i> GitHub
-              </a>
-              <a href="https://github.com/cs1m2414238/amazonML" target="_blank" rel="noopener noreferrer" class="secondary-button" aria-label="Pipeline Code">
-                <i class="fa-solid fa-code"></i> Pipeline Code
-              </a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================= 5. COMPACT GITHUB ACTIVITY SECTION ========================= -->
+    <!-- GitHub activity section -->
     <section class="section github-section" id="github">
       <span id="website-stats" class="visually-hidden" aria-hidden="true"></span>
       <div class="section-heading reveal">
@@ -792,16 +817,37 @@
       </div>
     </section>
 
-    <!-- ========================= 9. JOURNEY / TIMELINE ========================= -->
-   
-    
-    <!-- ========================= 11. CONTACT SECTION ========================= -->
+    <!-- Contact section -->
     <section class="section contact-section" id="contact">
       <div class="contact-grid reveal">
         <!-- Left: Heading & description -->
         <div class="contact-info">
           <h2 class="contact-title">Get In Touch</h2>
           <p class="contact-description">Open to internships, freelance projects, and full-time opportunities. Let's build something great together.</p>
+
+          <div class="contact-connections" role="group" aria-labelledby="connect-title">
+            <h3 id="connect-title" class="connect-title">Connect Elsewhere</h3>
+            <div class="connect-grid">
+              <a class="connect-card" href="https://www.youtube.com/@PriyanshuSharma-l7r" target="_blank" rel="noopener noreferrer">
+                <span class="connect-card-heading">
+                  <i class="fa-brands fa-youtube connect-icon connect-icon-youtube" aria-hidden="true"></i>
+                  <span class="connect-card-name">YouTube</span>
+                  <span class="connect-card-arrow" aria-hidden="true">&#8599;</span>
+                </span>
+                <p class="connect-card-description">Project demos &amp; build walkthroughs</p>
+                <span class="connect-card-action">Visit Channel</span>
+              </a>
+              <a class="connect-card" href="https://dev.to/priyanshu_sharma_a2be186a" target="_blank" rel="noopener noreferrer">
+                <span class="connect-card-heading">
+                  <i class="fa-brands fa-dev connect-icon" aria-hidden="true"></i>
+                  <span class="connect-card-name">Dev.to</span>
+                  <span class="connect-card-arrow" aria-hidden="true">&#8599;</span>
+                </span>
+                <p class="connect-card-description">Technical articles &amp; development notes</p>
+                <span class="connect-card-action">Follow on Dev.to</span>
+              </a>
+            </div>
+          </div>
         </div>
 
         <!-- Right: Contact form -->
@@ -846,7 +892,7 @@
     </section>
   </main>
 
-  <!-- ========================= FOOTER ========================= -->
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-grid">
       <!-- Info & copyright -->
@@ -854,15 +900,6 @@
         <p class="footer-copyright">&copy; 2025 Priyanshu Sharma. All rights reserved.</p>
         <p class="footer-tech-stack">Built with HTML, CSS, JS &amp; GSAP</p>
       </div>
-
-      <nav class="footer-nav" aria-label="Footer Navigation">
-        <a href="#home">Home</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#github">GitHub</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
 
       <!-- Social links -->
       <div class="footer-socials">
@@ -915,10 +952,11 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 
 
-  <!-- <script src="./js/welcome.js"></script> -->
+  <script src="./js/welcome.js"></script>
   <script src="./js/statpannel.js"></script>
   <script src="./js/terminal.js"></script>
   <script src="./js/script.js"></script>
+  <script src="./js/heading-alignment.js"></script>
   <script src="./js/graphql-client.js"></script>
   <script src="./js/keyboardlighting.js"></script>
 </body>

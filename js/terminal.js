@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!popup || !windowEl || !handle || !header) return;
 
-  // --- Window Positioning and Dragging Logic ---
+  // Terminal dragging and positioning
   let isDragging = false;
   let isResizing = false;
   let dragStartX = 0, dragStartY = 0;
@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  // --- Terminal Command Parsing & Input Sync ---
+  // Command execution and input handling
   const hiddenInput = document.getElementById("terminalHiddenInput");
   const inputTextSpan = popup.querySelector(".terminal-input-row .input-text");
   const historyEl = document.getElementById("terminalHistory");

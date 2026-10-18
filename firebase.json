@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "priyanshu-sharma-portfolio",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "backend/**",
+      "package*.json"
+    ]
+  }
+}

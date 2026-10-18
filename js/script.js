@@ -1,4 +1,5 @@
 const body = document.body;
+const BACKEND_API_BASE = "https://portfolio-api-1026847531254.asia-south1.run.app";
 const progressBar = document.querySelector("#progress-bar");
 const themeToggle = document.querySelector("#theme-toggle");
 const starfield = document.querySelector("#starfield");
@@ -51,16 +52,22 @@ function updateIcon(theme) {
 themeToggle.addEventListener("click", (e) => {
   const nextTheme = body.dataset.theme === "night" ? "dawn" : "night";
   const isDark = nextTheme === "night";
+  const applyTheme = () => {
+    body.dataset.theme = nextTheme;
+    try {
+      localStorage.setItem("portfolio:theme", nextTheme);
+    } catch {
+      // Theme switching still works when browser storage is unavailable.
+    }
+  };
 
   if (!document.startViewTransition) {
-    body.dataset.theme = nextTheme;
+    applyTheme();
     updateIcon(nextTheme);
     return;
   }
 
-  const transition = document.startViewTransition(() => {
-    body.dataset.theme = nextTheme;
-  });
+  const transition = document.startViewTransition(applyTheme);
 
   transition.ready.then(() => {
     const x = e.clientX;
@@ -253,11 +260,18 @@ document.addEventListener("DOMContentLoaded", () => {
     "Priyanshu Sharma",
     "Problem Solver",
     "Full Stack Developer",
-    "Backend Developer",
-    "Java Developer",
+    "AI/ML Engineer",
   ];
 
   const typingElement = document.getElementById("typing");
+  const titleSpace = document.querySelector(".hero-title-space");
+  if (titleSpace) {
+    titleSpace.replaceChildren(...roles.map(role => {
+      const span = document.createElement("span");
+      span.textContent = role;
+      return span;
+    }));
+  }
   let roleIndex = 0;
   let charIndex = 0;
   let deleting = false;
@@ -378,7 +392,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/api/contact", {
+      const response = await fetch(`${BACKEND_API_BASE}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -399,7 +413,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error("Contact form error:", error);
-      showToast("Connection Error", "Unable to connect to the backend server. Make sure it is running on port 8080.", true);
+      showToast("Connection Error", "Unable to connect to the backend server. Please try again later.", true);
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
@@ -409,9 +423,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ==========================================================================
-// GITHUB SECTION: COMPACT DEVELOPER PROOF OF WORK (DYNAMIC & LEAN)
-// ==========================================================================
+
+// GitHub section: load developer stats, language distribution, and pinned repos
+
 
 const GITHUB_USERNAME = "cs1m2414238";
 
@@ -651,8 +665,8 @@ async function loadGithub() {
   // 1. Try local Spring Boot proxy first
   try {
     const [profileRes, reposRes] = await Promise.all([
-      fetchWithTimeout("http://localhost:8080/api/github/profile", {}, 1800),
-      fetchWithTimeout("http://localhost:8080/api/github/repos", {}, 1800)
+      fetchWithTimeout(`${BACKEND_API_BASE}/api/github/profile`, {}, 3000),
+      fetchWithTimeout(`${BACKEND_API_BASE}/api/github/repos`, {}, 3000)
     ]);
     if (profileRes.ok && reposRes.ok) {
       profile = await profileRes.json();

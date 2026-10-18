@@ -1,11 +1,17 @@
-/*
 window.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
-  const welcomeTexts = gsap.utils.toArray(".welcome-text");
+  const welcomeTexts = Array.from(document.querySelectorAll(".welcome-text"));
   const targetElements = [".site-header", "main", ".site-footer"];
   const loadingScreen = document.querySelector(".loading");
 
   if (!loadingScreen || welcomeTexts.length === 0) return;
+
+  // Never leave the portfolio covered if the animation library cannot load.
+  if (typeof gsap === "undefined") {
+    loadingScreen.remove();
+    window.dispatchEvent(new CustomEvent("preloaderFinished"));
+    return;
+  }
 
   // lock user scroll while loading
   body.classList.add("lock-scroll");
@@ -72,4 +78,3 @@ window.addEventListener("DOMContentLoaded", () => {
     stagger: 0.05
   }, "-=0.88");
 });
-*/

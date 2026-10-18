@@ -1,4 +1,11 @@
 {
+  "name": "priyanshu-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio & Developer Showcase for Priyanshu Sharma",
+  "private": true,
+  "scripts": {
+    "test": "node --test js/graphql-client.test.cjs"
+  },
   "dependencies": {
     "octokit": "^5.0.5"
   }

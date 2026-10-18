@@ -1,0 +1,94 @@
+/* This request's sizing changes are isolated here for a straightforward revert. */
+.site-header,
+.site-footer,
+main > .section:not(.hero):not(#stats-panel-section) {
+  zoom: 0.9;
+}
+
+/* Scale the coding heading separately so card dimensions remain unchanged. */
+#stats-panel-section > .coding-profiles-heading {
+  zoom: 0.9;
+}
+
+/* Move only heading text; section containers and their contents keep their layout. */
+main > .section:not(.hero):not(#stats-panel-section) h2 {
+  position: relative;
+  left: var(--section-heading-offset, 0px);
+}
+
+/* Coordinated category colors: blue, orange, violet, green, and pink. */
+#skills {
+  --skill-front: 56, 189, 248;
+  --skill-back: 251, 146, 60;
+  --skill-data: 167, 139, 250;
+  --skill-ops: 52, 211, 153;
+  --skill-ai: 244, 114, 182;
+}
+
+#skills .stack-col:nth-child(1) { --skill-rgb: var(--skill-front); }
+#skills .stack-col:nth-child(2) { --skill-rgb: var(--skill-back); }
+#skills .stack-col:nth-child(3) { --skill-rgb: var(--skill-data); }
+#skills .stack-col:nth-child(4) { --skill-rgb: var(--skill-ops); }
+#skills .stack-col:nth-child(5) { --skill-rgb: var(--skill-ai); }
+
+#skills .stack-col {
+  --accent: rgb(var(--skill-rgb));
+}
+
+#skills .stack-branch-line {
+  background: linear-gradient(90deg,
+    rgb(var(--skill-front)) 10%,
+    rgb(var(--skill-back)) 30%,
+    rgb(var(--skill-data)) 50%,
+    rgb(var(--skill-ops)) 70%,
+    rgb(var(--skill-ai)) 90%);
+}
+
+#skills .stack-col .stack-category-node {
+  background: linear-gradient(145deg, rgba(var(--skill-rgb), 0.13), rgba(13, 16, 32, 0.76));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 18px rgba(var(--skill-rgb), 0.18);
+}
+
+#skills .stack-col .stack-category-node:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 26px rgba(var(--skill-rgb), 0.32);
+}
+
+#skills .tech-chip {
+  background: linear-gradient(135deg, rgba(var(--skill-rgb), 0.1), rgba(13, 16, 34, 0.72));
+  border-color: rgba(var(--skill-rgb), 0.42);
+}
+
+#skills .tech-chip:hover {
+  background: rgba(var(--skill-rgb), 0.2);
+  border-color: rgb(var(--skill-rgb));
+}
+
+/* Deeper versions of the same colors stay readable against the light theme. */
+body[data-theme="dawn"] #skills {
+  --skill-front: 3, 105, 161;
+  --skill-back: 194, 65, 12;
+  --skill-data: 109, 40, 217;
+  --skill-ops: 4, 120, 87;
+  --skill-ai: 190, 24, 93;
+}
+
+body[data-theme="dawn"] #skills .stack-category-node {
+  background: linear-gradient(145deg, rgba(var(--skill-rgb), 0.08), #ffffff);
+  box-shadow: 0 8px 24px rgba(var(--skill-rgb), 0.12), 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+body[data-theme="dawn"] #skills .stack-category-node:hover {
+  box-shadow: 0 12px 30px rgba(var(--skill-rgb), 0.2);
+}
+
+body[data-theme="dawn"] #skills .tech-chip {
+  background: #ffffff;
+  border-color: rgba(var(--skill-rgb), 0.3);
+}
+
+body[data-theme="dawn"] #skills .tech-chip:hover {
+  background: rgba(var(--skill-rgb), 0.08);
+  border-color: rgb(var(--skill-rgb));
+}
