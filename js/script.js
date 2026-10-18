@@ -112,16 +112,39 @@ themeToggle.addEventListener("click", (e) => {
   transition.finished.then(() => updateIcon(nextTheme));
 });
 
-//  HEADER SHRINK ON SCROLL
-
+//  HEADER SHRINK ON SCROLL (Throttled with requestAnimationFrame)
 const header = document.querySelector(".site-header");
+let headerTicking = false;
+let isHeaderScrolled = false;
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 40) {
-    header.classList.add("scrolled");
-  } else {
-    header.classList.remove("scrolled");
+  if (!headerTicking) {
+    requestAnimationFrame(() => {
+      const shouldBeScrolled = window.scrollY > 40;
+      if (shouldBeScrolled !== isHeaderScrolled) {
+        isHeaderScrolled = shouldBeScrolled;
+        if (header) {
+          header.classList.toggle("scrolled", isHeaderScrolled);
+        }
+      }
+      headerTicking = false;
+    });
+    headerTicking = true;
   }
+}, { passive: true });
+
+// Smooth scrolling for navigation anchor links (replaces global scroll-behavior)
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (event) {
+    const targetId = this.getAttribute("href");
+    if (targetId && targetId !== "#") {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        event.preventDefault();
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  });
 });
 
 // Initial load
@@ -149,10 +172,20 @@ const renderStars = () => {
   starfield.appendChild(fragment);
 };
 
+// GPU-accelerated progress bar update via transform scaleX
+let progressTicking = false;
 const updateProgressBar = () => {
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-  progressBar.style.width = `${progress}%`;
+  if (!progressTicking) {
+    requestAnimationFrame(() => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+      if (progressBar) {
+        progressBar.style.transform = `scaleX(${progress})`;
+      }
+      progressTicking = false;
+    });
+    progressTicking = true;
+  }
 };
 
 const revealObserver = new IntersectionObserver(
@@ -169,19 +202,44 @@ const revealObserver = new IntersectionObserver(
 
 revealItems.forEach((item) => revealObserver.observe(item));
 
+// 3D Skill Board Tilt: cached bounding rect + rAF throttling
 if (boardShell) {
-  boardShell.addEventListener("pointermove", (event) => {
-    const rect = boardShell.getBoundingClientRect();
-    const percentX = (event.clientX - rect.left) / rect.width - 0.5;
-    const percentY = (event.clientY - rect.top) / rect.height - 0.5;
+  let tiltTicking = false;
+  let mouseX = 0;
+  let mouseY = 0;
+  let shellRect = null;
 
-    boardShell.style.setProperty("--tilt-x", `${percentY * -7}deg`);
-    boardShell.style.setProperty("--tilt-z", `${percentX * 9}deg`);
-  });
+  const updateShellRect = () => {
+    shellRect = boardShell.getBoundingClientRect();
+  };
+
+  boardShell.addEventListener("mouseenter", updateShellRect, { passive: true });
+  window.addEventListener("resize", updateShellRect, { passive: true });
+
+  boardShell.addEventListener("pointermove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    if (!tiltTicking) {
+      requestAnimationFrame(() => {
+        if (!shellRect) {
+          shellRect = boardShell.getBoundingClientRect();
+        }
+        const percentX = (mouseX - shellRect.left) / shellRect.width - 0.5;
+        const percentY = (mouseY - shellRect.top) / shellRect.height - 0.5;
+
+        boardShell.style.setProperty("--tilt-x", `${percentY * -7}deg`);
+        boardShell.style.setProperty("--tilt-z", `${percentX * 9}deg`);
+        tiltTicking = false;
+      });
+      tiltTicking = true;
+    }
+  }, { passive: true });
 
   boardShell.addEventListener("pointerleave", () => {
     boardShell.style.setProperty("--tilt-x", "0deg");
     boardShell.style.setProperty("--tilt-z", "0deg");
+    shellRect = null;
   });
 }
 
